@@ -1,0 +1,464 @@
+@charset "UTF-8";
+
+body{
+	font-size: 12px !important;
+	font-family: 'Open Sans', sans-serif !important;
+	font-weight: 300;
+	color: #231f20 !important;
+	margin-top: 225px !important;
+}
+
+body a{
+	color: #000;
+}
+
+a:hover{
+	cursor:pointer;
+}
+
+header{
+	height: 225px;
+	background: #fff;	
+	position: fixed;
+	width:100%;
+	z-index: 10;
+	display: table;
+	margin-top: -225px;
+}
+
+header .container-fluid{
+	background: #f2f3f2;	
+	height: 38px;	
+}
+
+.header_social{
+	float:left;
+	margin-top: 10px;
+}
+
+.header_social ul{
+	margin:0;
+	padding: 0;
+}
+
+.header_social ul li{
+	list-style: none;
+	display: inline;
+	margin-right: 10px;
+}
+
+.header_profile{
+	float:right;
+	position: relative;
+	width:110px;
+	height:38px;
+	background:#6f886a;
+	text-align: center;
+	color: #fff;
+	cursor: pointer;
+}
+
+.header_profile span{
+	margin-top: 10px;
+	display: block;
+}
+
+.header_profile:hover .h_profile_menu, .h_profile_menu:hover{
+	display:block;	
+}
+
+.h_profile_menu{
+	display:none;
+	position: absolute;
+	width:110px;
+	top:41px;
+}
+
+.h_profile_menu ul{
+	margin:0;
+	padding:0;
+}
+
+.h_profile_menu ul li{
+	list-style: none;
+	padding: 7px 0px 7px 0px;
+	background: rgba(111,136,106,1);
+}
+
+.h_profile_menu ul li:hover{
+	background: rgba(111,136,106,0.8);
+}
+
+.header_shop{
+	float:right;
+	background:url(../images/shop_icon.png);
+	width: 50px;
+	height: 38px;
+}
+
+.logo{
+	margin: 40px auto;
+	margin-bottom: 40px;
+	width: 221px;
+	height: 59px;
+	background:url(../images/glam_logo.png);
+}
+
+.menu_container{
+	width: 100%;
+	float:left;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.main_menu{
+	width: 389px;
+	margin: 13px auto;
+	margin-bottom: 13px;
+}
+
+.main_menu ul{
+	margin:0;
+	padding: 0;
+}
+
+.main_menu ul li{
+	font-size: 14px !important;
+	list-style: none;
+	display: inline;
+	margin: 20px;
+}
+
+.bottles_fixed {
+	
+	position: fixed;
+	background: #fff;
+	z-index: 10;
+	width: 100%;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.fixed_fix {
+	
+	margin-bottom: 190px;
+	
+}
+
+#bottles {
+	
+	width: 640px;
+	margin: 40px auto;
+	margin-bottom: 0px;
+	position: relative;
+	display: table;
+	height: 250px;
+}
+
+.bottle_empty {
+	
+	width: 40px;
+	height: 107px;
+	position: absolute;
+}
+
+.bottle_added img, .bottle_empty img {
+	
+	width: 40px;
+	height: 107px;
+	display: block;
+}
+
+.bottle img {
+	
+	width: 131px;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+
+.bottle_purchase{
+	position: absolute;
+	bottom: 30px;
+	right:-40px;
+	padding: 8px;
+	width: 110px;
+	background: #273924;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;	
+}
+
+.bottle_purchase:hover{
+	opacity: 0.8;
+	
+}
+
+.h1{
+	font-weight: 300 !important;
+	text-align: center;
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 15px;
+	font-size: 24px !important;
+	margin-bottom: 40px !important;
+	margin-top: 100px !important;
+}
+
+.title{
+	text-align: center;
+	font-size: 22px;
+	font-weight: 400;
+	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+	margin-bottom: 10px;
+}
+
+.desc{
+	text-align: center;
+	font-size: 14px;
+}
+
+.bottle_box{
+	width: 875px;
+	margin: 25px auto;
+}
+
+.bottle {
+	
+	border: 2px solid #fff;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	float: left;
+	padding: 20px 20px 70px 20px;
+	position: relative;
+	display: table;
+}
+
+.bottle:hover {
+	
+	border: 2px solid #273924;
+	transition: all 0.3s ease;
+	
+}
+
+.bottle:hover .add_button {
+	
+	transition: all 0.3s ease;
+	opacity:1 !important;
+	
+}
+
+.add_button {
+	
+	transition: all 0.3s ease;
+	opacity:0;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	background: url("../images/add.png");
+	top: 8px;
+	right: 8px;
+	cursor: pointer;
+	
+}
+
+.bottle_desc {
+	text-transform: uppercase;
+	font-size: 13px;
+	text-align: center;
+	width: 200px;
+	margin-left: -35px;
+	margin-top: 15px;
+	position: absolute;	
+}
+
+.bottle_desc span {
+	margin-top: 5px;	
+	font-size: 11px;
+	display: block;
+}
+
+.bottle_added {
+	
+	float: left;
+	width: 40px;
+	height: 107px;
+	position: relative;
+	display: table;
+	margin-right: 40px;
+}
+
+.bottle_added .bottle_desc {
+	font-size: 12px;
+	width: 80px;
+	margin-left: -20px;
+}
+
+.remove_button {
+	  width: 20px;
+	  height: 20px;
+	  position: absolute;
+	  background: url("../images/remove.png");
+	  background-size: 20px 20px;
+	  top: -10px;
+	  right: 0px;
+	  cursor: pointer;
+	  opacity: 0;
+}
+
+footer{
+	margin-top: 100px;
+}
+
+.footer1{
+	background: #373737;
+	color: #fff;
+	padding-top: 50px;
+}
+
+.footer1 .row{
+	padding-bottom: 40px;
+	border-bottom: 1px solid #414141;
+}
+
+.footer1 ul{
+	margin:0;
+	padding:0;	
+}
+
+.footer1 ul li{
+	list-style: none;
+	display: inline;
+	padding-right: 10px;	
+}
+
+.footer_title{
+	font-size: 14px;
+	margin-bottom: 10px;
+	
+}
+
+.footer_social{
+	width: 100px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 40px;
+	
+}
+
+.footer_social ul{
+	margin:0;
+	padding:0;	
+}
+
+.footer_social ul li{
+	list-style: none;
+	display: inline;
+	padding: 0px 5px 0px 5px;	
+}
+
+.footer2{
+	background: #fff;
+	padding: 15px 0 15px 0;
+}
+
+.footer_glam{
+	float: left;
+	width: 116px;
+	height: 31px;
+	background:url(../images/glam_logo.png);
+	background-size: 116px 31px;
+	margin-top: 5px;
+}
+
+.footer_busy{
+	float: right;
+	width: 154px;
+	height: 41px;
+	background:url(../images/busy_logo.png);
+	background-size: 154px 41px;
+}
+
+@media (max-width: 1200px) {	
+.bottle_box{
+	width: 100%;
+	margin: 0px;
+}
+
+}
+
+@media (max-width: 768px) {
+.desc{
+	margin-bottom: 30px;
+}
+
+.add_button {
+	
+	width: 24px;
+	height: 24px;	
+	background-size: 24px 24px !important;
+}
+
+.footer1 .col-md-4 {
+	margin-bottom: 30px;
+}
+
+.bottle_purchase{
+	right:0;
+}
+
+}
+
+@media (max-width: 360px) {
+.header_social, .bottles_fixed{
+	display: none;
+}
+
+header .container-fluid{
+	padding: 0;
+}
+
+.fixed_fix{
+	margin-bottom: -101px;
+}
+
+.bottle img{
+	width: 93px;
+}
+
+.bottle_desc{
+	margin-left: -53px;
+}
+
+.bottle_box{
+	margin-left: 23px;
+}
+
+.footer_glam{
+	width: 80px;
+	height: 21px;
+	background-size: 80px 21px;
+}
+
+.footer_busy{
+	width: 116px;
+	height: 31px;
+	background-size: 116px 31px;
+}
+
+.main_menu{
+	width: 299px;
+}
+
+.main_menu ul li{
+	margin: 11px;
+}
+
+}
+
+@media (max-width: 320px) {
+
+.bottle_box{
+	margin-left: 0px;
+}
+
+}
