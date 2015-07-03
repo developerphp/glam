@@ -18,7 +18,7 @@
             
                 <div class="h_profile_menu">
                     <ul>
-                        <li>Üyelik Bilgileriii</li>
+                        <li>Üyelik Bilgileri</li>
                         <li>Adres Defteri</li>
                         <li>Sipraişlerim</li>
                         <li>Çıkış Yap</li>

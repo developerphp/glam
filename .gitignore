@@ -1,2 +1,6 @@
 
 .htaccess
+
+application/views/includes/header.php
+
+*.php
