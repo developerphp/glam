@@ -38,7 +38,7 @@
     
         <ul>
             <li><a>GLAM</a></li>
-            <li><a>DETOX</a></li>
+            <li><a href="<?php echo base_url('detox') ?>">DETOX</a></li>
             <li><a>EAT</a></li>
             <li><a href="<?php echo base_url('drinks') ?>">DRINKS</a></li>
             <li><a>SHOP</a></li>
