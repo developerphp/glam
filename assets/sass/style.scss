@@ -72,7 +72,10 @@ header{
 	width:100%;
 	z-index: 10;
 	margin-top: -225px;
-
+	@include xs{
+		padding: 0px;
+		margin-top: -164px;
+	}
 	.container-fluid{
 		background: $c_header;
 		height: 38px;
@@ -150,10 +153,15 @@ header{
 
 .logo{
 	margin: 40px auto;
-	margin-bottom: 40px;
 	width: 221px;
 	height: 59px;
 	background:url(../images/glam_logo.png);
+	@include xs{
+		margin: 20px auto;
+		width: 150px;
+		height: 40px;
+		background-size: 150px 40px;
+	}
 }
 
 .menu_container{
@@ -173,6 +181,10 @@ header{
 			list-style: none;
 			display: inline;
 			margin: 20px;
+
+			@include sm{
+				margin: 11px;
+			}
 
 			@include xs{
 				margin: 11px;
