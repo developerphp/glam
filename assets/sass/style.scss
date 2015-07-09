@@ -4,6 +4,7 @@
 
 $f_osans: 'Open Sans', sans-serif;
 $f_georgia: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+$f_didot: 'Didot 06 A', 'Didot 06 B';
 
 $c_black: #231f20; 
 $c_white: #fff;
@@ -189,6 +190,12 @@ header{
 
 			@include xxs{
 				margin: 4px;
+			}
+
+			a{
+				&:hover{
+					text-decoration: underline;
+				}
 			}
 		}
 	}
@@ -448,7 +455,10 @@ text-align: center;
 	padding: 15px;
 	font-size: 24px !important;
 	margin-bottom: 40px !important;
-	margin-top: 100px !important;
+	margin-top: 100px;
+	@include xs{
+		margin-top: 50px !important;
+	}	
 }
 
 .title{
@@ -616,6 +626,9 @@ footer{
 
 .page_margin{
 	margin-top: 60px;
+	@include xs{
+		margin-top: 15px;
+	}
 }
 
 /*bottle_details*/
@@ -635,11 +648,12 @@ footer{
 
 
 .details_title{
-	font-size: 20px;
-	font-weight:bold;
+	font-size: 60px;
 	margin-bottom: 20px;
+	font-family: $f_didot;
 
 	span{
+		font-family: $f_osans;
 		padding-top: 5px;
 		margin-top: 5px;
 		border-top: 1px solid $c_black;
@@ -663,6 +677,7 @@ footer{
 .details_desc{
 	@include xs{
 		text-align: center;
+		margin-top: 20px;
 	}
 	ul{
 		margin-bottom: 20px !important;
@@ -677,7 +692,7 @@ footer{
 }
 
 .detox_pad{
-	padding: 60px;
+	padding: 30px 40px 0 40px;
 	@include xs{
 		padding: 30px;
 	}
@@ -695,6 +710,9 @@ footer{
 .detox_desc_long{
 	font-size: 14px;
 	margin: 100px 0px 0px 0px;
+	@include xs{
+		margin: 50px 0px 0px 0px;
+	}
 }
 
 .detox_button{
@@ -707,7 +725,7 @@ footer{
 	&:hover{
 		transition: all ease 0.3s;
 		background: $c_green;
-		color: $c_white;
+		color: $c_white !important;
 	}
 	@include xs{
 		margin: 25px 0px 0px 0px;
