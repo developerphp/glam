@@ -14,7 +14,7 @@ error_reporting(0);
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/glam/';
+$config['base_url']	= 'http://www.busyistanbul.com/clients/glam/';
 
 /*
 |--------------------------------------------------------------------------

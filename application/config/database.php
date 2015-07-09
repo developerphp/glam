@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'glam';
+$db['default']['hostname'] = '94.73.148.195';
+$db['default']['username'] = 'glamdb';
+$db['default']['password'] = 'Busy6512';
+$db['default']['database'] = 'glamdb';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

@@ -1,6 +1,9 @@
+.DS_Store
 
-.htaccess
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
 
-application/views/includes/header.php
-
-*.php
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess

@@ -1,39 +1,43 @@
 <header>
     <div class="container-fluid">
-    <div class="container">
-    
-    	<div class="row">
-            <div class="header_social">
-                <ul>
-                    <li>FACEBOOK</li>
-                    <li>PINTEREST</li>
-                    <li>INSTAGRAM</li>
-                </ul>
-            </div> 
+        <div class="container">
+        
+            <div class="row">
+            	<div id="m_menu"></div>
             
-            <div class="header_shop"></div>
-            
-            <div class="header_profile">
-            <span>Jane Do</span>
-            
-                <div class="h_profile_menu">
+                <div class="header_social">
                     <ul>
-                        <li>Üyelik Bilgileri</li>
-                        <li>Adres Defteri</li>
-                        <li>Sipraişlerim</li>
-                        <li>Çıkış Yap</li>
+                        <li>FACEBOOK</li>
+                        <li>PINTEREST</li>
+                        <li>INSTAGRAM</li>
                     </ul>
+                </div> 
+                
+                <div class="header_shop"></div>
+                
+                <div class="header_profile">
+                <span>Jane Do</span>
+                
+                    <div class="h_profile_menu">
+                        <ul>
+                            <li>Üyelik Bilgileri</li>
+                            <li>Adres Defteri</li>
+                            <li>Sipraişlerim</li>
+                            <li>Çıkış Yap</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-    	</div>
-        
-    </div>  
+            
+        </div>  
     </div>   
 
 <div class="logo"></div>
 
 <div class="menu_container">
 
+	<div id="m_close"></div>
+    
     <div class="main_menu">
     
         <ul>

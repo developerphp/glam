@@ -9,11 +9,14 @@
 <link href="<?php echo base_url('assets/css/bootstrap.css') ?>" rel="stylesheet" />
 <link href="<?php echo base_url('assets/css/style.css') ?>" rel="stylesheet" type="text/css" />
 
+<link rel="stylesheet" type="text/css" href="http://cloud.typography.com/7245092/665028/css/fonts.css" />
+
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
 <script src="<?php echo base_url('assets/js/jquery-1.11.2.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/bottle_add.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/mobile.js') ?>"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
