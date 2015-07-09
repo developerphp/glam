@@ -263,16 +263,16 @@ ul {
 }
 
 body {
-  font-size: 12px !important;
-  font-family: "Open Sans", sans-serif !important;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  color: #231f20 !important;
-  margin-top: 225px !important;
+  color: #231f20;
+  margin-top: 225px;
 }
 
 @media only screen and (max-width: 767px) {
   body {
-    margin-top: 164px !important;
+    margin-top: 166px;
   }
 }
 
@@ -315,7 +315,6 @@ input:-webkit-autofill {
 }
 
 header {
-  height: 225px;
   background: #fff;
   position: fixed;
   width: 100%;
@@ -325,8 +324,7 @@ header {
 
 @media only screen and (max-width: 767px) {
   header {
-    padding: 0px;
-    margin-top: -164px;
+    margin-top: -166px;
   }
 }
 
@@ -432,9 +430,8 @@ header .container-fluid {
 }
 
 .main_menu {
-  width: 389px;
+  display: table;
   margin: 13px auto;
-  margin-bottom: 13px;
 }
 
 .main_menu ul li {
@@ -452,13 +449,13 @@ header .container-fluid {
 
 @media only screen and (max-width: 767px) {
   .main_menu ul li {
-    margin: 11px;
+    margin: 8px;
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .main_menu {
-    width: 299px;
+@media only screen and (max-width: 320px) {
+  .main_menu ul li {
+    margin: 4px;
   }
 }
 
@@ -1244,4 +1241,15 @@ footer {
   opacity: 0.9;
   visibility: visible;
   transition: all ease 0.6s;
+}
+
+/*eat detail*/
+.eat_gallery div {
+  margin-bottom: 30px;
+}
+
+.eat_title {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
 }
