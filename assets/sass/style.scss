@@ -20,6 +20,9 @@ body{
 	font-weight: 300;
 	color: $c_black !important;
 	margin-top: 225px !important;
+	@include xs{
+		margin-top: 164px !important;
+	}
 }
 
 .img-responsive{

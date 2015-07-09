@@ -270,6 +270,12 @@ body {
   margin-top: 225px !important;
 }
 
+@media only screen and (max-width: 767px) {
+  body {
+    margin-top: 164px !important;
+  }
+}
+
 .img-responsive {
   width: 100%;
 }
