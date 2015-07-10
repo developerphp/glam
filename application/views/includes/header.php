@@ -16,16 +16,20 @@
                 <div class="header_shop"></div>
                 
                 <div class="header_profile">
-                <span>Jane Do</span>
+                <?php if ($login==1) { ?>
+                <span><?php echo $this->session->userdata('name').' '.$this->session->userdata('surname') ?></span>
                 
                     <div class="h_profile_menu">
                         <ul>
-                            <li>Üyelik Bilgileri</li>
+                            <li><a href="<?php echo base_url('profile/edit') ?>">Üyelik Bilgileri</a></li>
                             <li>Adres Defteri</li>
                             <li>Sipraişlerim</li>
-                            <li>Çıkış Yap</li>
+                            <li><a href="<?php echo base_url('register/logout') ?>">Çıkış Yap</a></li>
                         </ul>
                     </div>
+                <?php } else {?>
+                <a href="<?php echo base_url('register/login') ?>"><span>Giriş Yap</span></a>
+                <?php }?>
                 </div>
             </div>
             

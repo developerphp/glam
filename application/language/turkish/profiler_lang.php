@@ -1,25 +1,25 @@
 <?php
 
-$lang['profiler_database']		= 'DATABASE';
-$lang['profiler_controller_info'] = 'CLASS/METHOD';
-$lang['profiler_benchmarks']	= 'BENCHMARKS';
-$lang['profiler_queries']		= 'QUERIES';
-$lang['profiler_get_data']		= 'GET DATA';
-$lang['profiler_post_data']		= 'POST DATA';
-$lang['profiler_uri_string']	= 'URI STRING';
-$lang['profiler_memory_usage']	= 'MEMORY USAGE';
-$lang['profiler_config']		= 'CONFIG VARIABLES';
-$lang['profiler_session_data']	= 'SESSION DATA';
-$lang['profiler_headers']		= 'HTTP HEADERS';
-$lang['profiler_no_db']			= 'Database driver is not currently loaded';
-$lang['profiler_no_queries']	= 'No queries were run';
-$lang['profiler_no_post']		= 'No POST data exists';
-$lang['profiler_no_get']		= 'No GET data exists';
-$lang['profiler_no_uri']		= 'No URI data exists';
-$lang['profiler_no_memory']		= 'Memory Usage Unavailable';
-$lang['profiler_no_profiles']	= 'No Profile data - all Profiler sections have been disabled.';
-$lang['profiler_section_hide']	= 'Hide';
-$lang['profiler_section_show']	= 'Show';
+$lang['profiler_database'] = 'VERİTABANI';
+$lang['profiler_controller_info'] = 'SINIF/METOD';
+$lang['profiler_benchmarks'] = 'KARŞILAŞTIRMALI DEĞERLENDİRMELER';
+$lang['profiler_queries'] = 'SORGULAR';
+$lang['profiler_get_data'] = 'GET VERİLERİ';
+$lang['profiler_post_data'] = 'POST VERİLERİ';
+$lang['profiler_uri_string'] = 'URI VERİLERİ';
+$lang['profiler_memory_usage'] = 'Hafıza kullanımı';
+$lang['profiler_config'] = 'CONFIG DEĞİŞKENLERİ';
+$lang['profiler_session_data']	= 'SESSION VERİLERİ';
+$lang['profiler_headers'] = 'HTTP BAŞLIKLARI';
+$lang['profiler_no_db'] = 'Veritabanı sürücüsü şu anda yüklenmedi';
+$lang['profiler_no_queries'] = 'Hiçbir sorgu çalışmıyor';
+$lang['profiler_no_post'] = 'Hiçbir POST verisi yok';
+$lang['profiler_no_get'] = 'Hiçbir GET verisi yok';
+$lang['profiler_no_uri'] = 'Hiçbir URI verisi yok';
+$lang['profiler_no_memory'] = 'Hafıza kullanım dışı';
+$lang['profiler_no_profiles']	= 'Profil verisi yok - Tüm Profiler bölümleri devre dışı bırakılmış.';
+$lang['profiler_section_hide']	= 'Gizle';
+$lang['profiler_section_show']	= 'Göster';
 
 /* End of file profiler_lang.php */
-/* Location: ./system/language/english/profiler_lang.php */
+/* Location: ./system/language/turkish/profiler_lang.php */

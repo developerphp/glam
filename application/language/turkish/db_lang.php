@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 $lang['db_invalid_connection_str'] = 'Veritabanı ayarları hatalı yapılandırılmış.';
 $lang['db_unable_to_connect'] = 'Veritabanıyla bağlantı kurulamıyor.';
 $lang['db_unable_to_select'] = '%s veritabanı seçilemedi';
@@ -23,4 +24,6 @@ $lang['db_column_name_required'] = 'Bu operasyon için bir kolon ismi gereklidir
 $lang['db_column_definition_required'] = 'Bu operasyon için bir tablo tanımı gereklidir.';
 $lang['db_unable_to_set_charset'] = '%s kullanıcı karakter seti ayarlanamadı. ';
 $lang['db_error_heading'] = 'Veritabanında bir hata oluştu.';
-?>
+
+/* End of file db_lang.php */
+/* Location: ./system/language/turkish/db_lang.php */

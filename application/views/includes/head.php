@@ -15,6 +15,12 @@
 
 <script src="<?php echo base_url('assets/js/jquery-1.11.2.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/bootstrap.js') ?>"></script>
+
+<script>
+	var base_url='<?php echo base_url() ?>';
+</script>
+
+<script src="<?php echo base_url('assets/js/glam.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/bottle_add.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/mobile.js') ?>"></script>
 

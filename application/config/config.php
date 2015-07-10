@@ -1,5 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-error_reporting(0);
+//error_reporting(0);
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -69,7 +69,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'turkish';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'JUICOO';
+$config['encryption_key'] = 'GLAMBUSY';
 
 /*
 |--------------------------------------------------------------------------
