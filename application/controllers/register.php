@@ -6,6 +6,8 @@ class Register extends CI_Controller {
 	{            
         $datas["login"]=$this->session->userdata('login');
         $this->load->view('eatsView',$datas);
+
+        echo "sezgin";
 	}
 	
 	echo "cem";
