@@ -23,7 +23,10 @@
             </div>
             <div class="col-md-4">
                 <div class="footer_title">E-Bülten</div>
-                <div class="newsletter"><img src="<?php echo base_url() ?>assets/images/newsletter.png"></div>
+                <form class="newsletter">
+					<input class="box" type="email" name="email" placeholder="E-mail adresi">
+                    <input class="button" type="submit" name="submit" value="">
+                </form>
             </div>
         </div>
         

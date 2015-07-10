@@ -647,6 +647,27 @@ footer{
 	}	
 }
 
+.newsletter{
+	.box{
+		float:left;
+		width: 200px;
+		height: 35px;
+		border:1px solid;
+		padding-right: 10px;
+	}
+
+	.button{
+		border: 0px;
+		float:left;
+		margin-top: 1px;
+		height: 35px;
+		width: 35px;
+		background: url(../images/button_arrow.png) no-repeat;
+		background-color: #2b2a2a;
+		background-position: center;
+	}
+}
+
 .footer2{
 	background: $c_white;
 	padding: 15px 0 15px 0;
