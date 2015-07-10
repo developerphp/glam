@@ -15,7 +15,7 @@
     <div class="row">
     
     	<div class="col-md-10 col-md-offset-1">
-    		<?php echo $category->content ?>
+    		<?php echo $category->description ?>
         </div>
         
     </div>

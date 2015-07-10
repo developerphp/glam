@@ -15,7 +15,7 @@ class Eats extends CI_Controller {
 				select 
 				products.id, products.title,products.catid,products.ingredients,products.content,products.image,products.price,products.detail_description,products.banner,
 				products.content2,products.benefits,
-				product_categories.id as cid,product_categories.title as category_name
+				product_categories.id as cid,product_categories.title as category_name, product_categories.content
 				from 
 				products,product_categories
 				where products.id=".$id." and products.catid=product_categories.id");
