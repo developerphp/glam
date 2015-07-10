@@ -653,13 +653,13 @@ footer{
 		width: 200px;
 		height: 35px;
 		border:1px solid;
-		padding-right: 10px;
+		padding-left: 10px;
+		color: $c_black;
 	}
 
 	.button{
 		border: 0px;
 		float:left;
-		margin-top: 1px;
 		height: 35px;
 		width: 35px;
 		background: url(../images/button_arrow.png) no-repeat;
