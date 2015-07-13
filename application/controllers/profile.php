@@ -25,6 +25,223 @@ class Profile extends CI_Controller {
         }
 	}
 
+    public function address()
+    {   
+        $login=$this->session->userdata('login');
+        $datas["login"]=$login;
+        if ($login==1) {
+            
+            $userid=$this->session->userdata('userid');
+            
+            if (is_numeric($userid)) {      
+                $datas['userid']=$userid;
+                $this->load->view('profile/addressView',$datas);   
+            }                
+        }
+        else {
+            $this->load->view('home_view',$datas);
+        }
+    }
+
+    public function addressEdit($id="")
+    {   
+        $login=$this->session->userdata('login');
+        $datas["login"]=$login;
+        if ($login==1) {
+            
+            $userid=$this->session->userdata('userid');
+            
+            if (is_numeric($userid)) {      
+                $datas['userid']=$userid;
+                if (is_numeric($id)) {
+                    $sql=$this->db->query("select * from address where user_id=".$userid." and id=".$id."");
+                    foreach($sql->result() as $address) {
+                        $datas['address']=$address;
+                        $this->load->view('profile/editAddressView',$datas);   
+                    }
+                }                
+            }                
+        }
+        else {
+            $this->load->view('home_view',$datas);
+        }
+    }
+
+    public function addAddressForm_do() {
+        $login=$this->session->userdata('login');
+        $datas["login"]=$login;
+        if ($login==1) {
+            $title=$this->input->post('title');
+            $address_type=$this->input->post('address_type');
+            $tck=$this->input->post('title');
+            $addressName=$this->input->post('addressName');
+            $namesurname=$this->input->post('namesurname');
+            $address=$this->input->post('address');
+            $zipcode=$this->input->post('zipcode');
+            $phone=$this->input->post('phone');
+            $county=$this->input->post('county');
+
+            $companyName=$this->input->post('companyName');
+            $tax_name=$this->input->post('tax_name');
+            $tax_number=$this->input->post('tax_number');
+            
+            $this->load->helper('form');
+            $this->load->library('form_validation');
+            
+            $this->form_validation->set_rules('title', 'Adres Adı', 'required|min_length[1]|max_length[100]|xss_clean');
+
+            if ($address_type==1) {
+                $this->form_validation->set_rules('companyName', 'Şirket Adı', 'required|min_length[1]|max_length[100]|xss_clean');
+                $this->form_validation->set_rules('tax_name', 'Vergi Dairesi', 'required|min_length[1]|max_length[100]|xss_clean');
+                $this->form_validation->set_rules('tax_number', 'Vergi Numarası', 'required|min_length[1]|max_length[100]|xss_clean');
+            }
+            else {
+                $this->form_validation->set_rules('namesurname', 'Alıcı Adı Soyadı', 'required|min_length[1]|max_length[100]|xss_clean');
+                $this->form_validation->set_rules('addressName', 'Adres İsmi', 'required|min_length[1]|max_length[100]|xss_clean');
+            }            
+
+            $this->form_validation->set_rules('address', 'Adres', 'required|min_length[5]|max_length[100]|xss_clean');
+            $this->form_validation->set_rules('county', 'İlçe', 'required|min_length[1]|xss_clean');
+            $this->form_validation->set_rules('phone', 'Telefon', 'required|min_length[11]|max_length[20]|xss_clean');
+
+            if ($this->form_validation->run() == FALSE)
+            {                        
+                echo validation_errors('<div class="form_error">', '</div>');
+            }
+            else {
+                $member_id=$this->session->userdata('userid');
+                $sql=$this->db->query("select * from users where id=".$this->db->escape($member_id)."");
+                foreach($sql->result() as $member) {
+                    $datas=array(
+                        'user_id'=>$member->id,
+                        'company'=>$address_type,
+                        'company_name'=>$companyName,
+                        'address_title'=>$title,
+                        'address_name'=>$addressName,
+                        'name_surname'=>$namesurname,
+                        'address'=>$address,
+                        'county'=>$county,
+                        'zip_code'=>$zipcode,
+                        'phone'=>$phone,
+                        'tax_name'=>$tax_name,
+                        'tax_number'=>$tax_number
+                    );
+                    if ($this->db->insert('address',$datas)) {
+                        ?><script>location.href='<?php echo base_url("profile/address") ?>'</script><?php
+                    }
+                }
+            }
+        }
+    }
+
+    public function editAddressForm_do() {
+        $login=$this->session->userdata('login');
+        $datas["login"]=$login;
+        if ($login==1) {
+
+            $id=$this->input->post('id');
+
+            $title=$this->input->post('title');
+            $address_type=$this->input->post('address_type');
+            $tck=$this->input->post('title');
+            $addressName=$this->input->post('addressName');
+            $namesurname=$this->input->post('namesurname');
+            $address=$this->input->post('address');
+            $zipcode=$this->input->post('zipcode');
+            $phone=$this->input->post('phone');
+            $county=$this->input->post('county');
+
+            $companyName=$this->input->post('companyName');
+            $tax_name=$this->input->post('tax_name');
+            $tax_number=$this->input->post('tax_number');
+            
+            $this->load->helper('form');
+            $this->load->library('form_validation');
+            
+            $this->form_validation->set_rules('title', 'Adres Adı', 'required|min_length[1]|max_length[100]|xss_clean');
+
+            if ($address_type==1) {
+                $this->form_validation->set_rules('companyName', 'Şirket Adı', 'required|min_length[1]|max_length[100]|xss_clean');
+                $this->form_validation->set_rules('tax_name', 'Vergi Dairesi', 'required|min_length[1]|max_length[100]|xss_clean');
+                $this->form_validation->set_rules('tax_number', 'Vergi Numarası', 'required|min_length[1]|max_length[100]|xss_clean');
+            }
+            else {
+                $this->form_validation->set_rules('namesurname', 'Alıcı Adı Soyadı', 'required|min_length[1]|max_length[100]|xss_clean');
+                $this->form_validation->set_rules('addressName', 'Adres İsmi', 'required|min_length[1]|max_length[100]|xss_clean');
+            }            
+
+            $this->form_validation->set_rules('address', 'Adres', 'required|min_length[5]|max_length[100]|xss_clean');
+            $this->form_validation->set_rules('county', 'İlçe', 'required|min_length[1]|xss_clean');
+            $this->form_validation->set_rules('phone', 'Telefon', 'required|min_length[11]|max_length[20]|xss_clean');
+
+            if ($this->form_validation->run() == FALSE)
+            {                        
+                echo validation_errors('<div class="form_error">', '</div>');
+            }
+            else {
+                $member_id=$this->session->userdata('userid');
+                $sql=$this->db->query("select * from users where id=".$this->db->escape($member_id)."");
+                foreach($sql->result() as $member) {
+
+                    $sql=$this->db->query("select * from address where user_id=".$member->id." and id=".$this->db->escape($id)."");
+                    if ($sql->num_rows()>0) {
+                        $datas=array(
+                        'user_id'=>$member->id,
+                        'company'=>$address_type,
+                        'company_name'=>$companyName,
+                        'address_title'=>$title,
+                        'address_name'=>$addressName,
+                        'name_surname'=>$namesurname,
+                        'address'=>$address,
+                        'county'=>$county,
+                        'zip_code'=>$zipcode,
+                        'phone'=>$phone,
+                        'tax_name'=>$tax_name,
+                        'tax_number'=>$tax_number
+                        );
+                        $this->db->where('id',$id);
+                        if ($this->db->update('address',$datas)) {
+                            ?><script>location.href='<?php echo base_url("profile/address") ?>'</script><?php
+                        }
+                    }                    
+                }
+            }
+        }
+    }
+
+    function deleteAddress($id="") {
+        $member_id=$this->session->userdata('userid');
+        $sql=$this->db->query("select * from users where id=".$this->db->escape($member_id)."");
+        foreach($sql->result() as $member) {
+            $sql=$this->db->query("select * from address where id=".$id." and user_id=".$member_id."");
+            foreach($sql->result() as $a) {
+                $this->db->where('id',$a->id);
+                if ($this->db->delete('address')) { ?>
+                        <script>
+                            parent.$('#address<?php echo $id ?>').slideUp(250);
+                        </script>
+                <?php 
+                }
+            }
+        }
+    }
+
+    public function addAddress() {
+        $login=$this->session->userdata('login');
+        $datas["login"]=$login;
+        if ($login==1) {
+            
+            $userid=$this->session->userdata('userid');
+            
+            if (is_numeric($userid)) {                    
+                $this->load->view('profile/addAddressView',$datas);   
+            }                
+        }
+        else {
+            $this->load->view('home_view',$datas);
+        }
+    }
+
     public function profileForm_do()
     {
             $login=$this->session->userdata('login');
