@@ -40,22 +40,22 @@
                   <div class="login_box">
                     
                     <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-6">
                                 <input class="input_box" type="text" name="name" placeholder="Ad" />
                             </div>
                             
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-6">
                               <input class="input_box" type="text" name="surname" placeholder="Soyad" />
                             </div>   
                               
                       </div>
                       
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <input class="input_box" type="password" name="password" placeholder="Şifre" />
                         </div>
                         
-                        <div class="col-md-6">      
+                        <div class="col-md-6 col-sm-6">      
                             <input class="input_box" type="password" name="password_repeat" placeholder="Şifre Tekrarı" />
                         </div>
                         
@@ -63,15 +63,15 @@
                        
                         <div class="row"> 
                         
-                          <div class="col-md-6">    
+                          <div class="col-md-6 col-sm-6">    
                                 <input class="input_box" type="email" name="email" placeholder="E Posta" />
                          </div>
                             
-                            <div class="col-md-2">   
+                            <div class="col-md-2 col-sm-2">   
                               <input class="input_box" type="tel" name="phoneAreaCode" placeholder="Alan Kodu" maxlength="3" />
                             </div>
                             
-                            <div class="col-md-4">   
+                            <div class="col-md-4 col-sm-4">   
                                 <input class="input_box" type="tel" name="phone" placeholder="Telefon" maxlength="7" />
                             </div>
                         </div>

@@ -108,22 +108,24 @@ header{
 .header_profile{
 	float:right;
 	position: relative;
-	width:110px;
+	padding: 0 15px 0 15px;
 	height:38px;
 	background: $c_lightGreen;
 	text-align: center;
-	color: $c_white;
 	cursor: pointer;
 
 	&:hover{
+		background: $c_lighterGreen;
+
 		.h_profile_menu{
-		display:block;
+			display:block;
 		}	
 	}
 
 	span{
 		margin-top: 10px;
 		display: block;
+		color: $c_white;
 	}
 }
 
@@ -131,13 +133,28 @@ header{
 	border-top: 3px solid $c_white;
 	display:none;
 	position: absolute;
-	width:110px;
+	width: 100%;
 	top: 38px;
+	left:0;
 	background: $c_lightGreen;
+	color: $c_white !important;
 	ul{
 		li{
 			list-style: none;
 			padding: 7px 0px 7px 0px;
+
+			a{
+				color: $c_white !important;
+			}
+
+			a:visited{
+				color: $c_white !important;
+			}
+
+			a:active{
+				color: $c_white !important;
+			}
+
 			&:hover{
 				background: $c_lighterGreen;
 			}
@@ -955,6 +972,32 @@ footer{
 	right: 30px;
 }
 
+.addressNav {
+  margin-bottom: 30px;
+  margin-left:0;
+}
+
+.addressNav a{
+
+  margin-right: 10px;
+
+}
+
+.addressNav a:before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: 1px solid $c_green;
+  margin-right: 5px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.addressNav a.active:before {
+  content: "";
+  background: $c_green;
+}
+
 .select_box{
 	width: 100%;
 	height: 40px;
@@ -982,7 +1025,8 @@ footer{
 }
 
 .change_pass{
-	margin-bottom: 20px;
+	margin-top: 10px;
+	float: left;
 }
 
 .login_button{
@@ -990,7 +1034,7 @@ footer{
 	padding: 10px 0px 10px 0px;
 	background: $c_green;
 	border: 0px solid;
-	color: $c_white;
+	color: $c_white !important;
 	display: block;
 	width: 110px;
 	text-align: center;
@@ -1016,10 +1060,9 @@ footer{
 		}
 }
 
-
-.lost_pass{
-	float: right;
-	margin-top: -30px;
+.lost_pass {
+	float: left;
+	margin-top: 10px;
 }
 
 .hover_desc{
