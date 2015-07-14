@@ -25,6 +25,24 @@ class Profile extends CI_Controller {
         }
 	}
 
+    public function orders()
+    {   
+        $login=$this->session->userdata('login');
+        $datas["login"]=$login;
+        if ($login==1) {
+            
+            $userid=$this->session->userdata('userid');
+            
+            if (is_numeric($userid)) {      
+                $datas['userid']=$userid;
+                $this->load->view('profile/ordersView',$datas);   
+            }                
+        }
+        else {
+            $this->load->view('home_view',$datas);
+        }
+    }
+
     public function address()
     {   
         $login=$this->session->userdata('login');

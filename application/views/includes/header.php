@@ -22,8 +22,8 @@
                     <div class="h_profile_menu">
                         <ul>
                             <li><a href="<?php echo base_url('profile/edit') ?>">Üyelik Bilgileri</a></li>
-                            <li>Adres Defteri</li>
-                            <li>Sipraişlerim</li>
+                            <li><a href="<?php echo base_url('profile/address') ?>">Adres Defteri</a></li>
+                            <li><a href="<?php echo base_url('profile/orders') ?>">Sipraişlerim</a></li>
                             <li><a href="<?php echo base_url('register/logout') ?>">Çıkış Yap</a></li>
                         </ul>
                     </div>
