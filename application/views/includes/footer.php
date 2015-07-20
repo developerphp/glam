@@ -32,11 +32,9 @@
         
         <div class="row">
             <div class="footer_social">
-            	<ul>
-                    <li><img src="<?php echo base_url() ?>assets/images/social_ins.png"></li>
-                    <li><img src="<?php echo base_url() ?>assets/images/social_face.png"></li>
-                    <li><img src="<?php echo base_url() ?>assets/images/social_pin.png"></li>
-                </ul>
+            	<a><img src="<?php echo base_url() ?>assets/images/social_ins.png"></a>
+                <a><img src="<?php echo base_url() ?>assets/images/social_face.png"></a>
+                <a><img src="<?php echo base_url() ?>assets/images/social_pin.png"></a>
             </div>
         </div>
         

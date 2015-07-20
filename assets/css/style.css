@@ -950,15 +950,13 @@ footer {
 }
 
 .footer_social {
-  width: 100px;
+  display: table;
   margin: 0 auto;
-  text-align: center;
-  padding-top: 40px;
+  margin-top: 40px;
 }
 
-.footer_social ul li {
-  list-style: none;
-  display: inline;
+.footer_social a {
+  text-align: center;
   padding: 0px 5px 0px 5px;
 }
 
