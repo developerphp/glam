@@ -24,6 +24,17 @@
 <script src="<?php echo base_url('assets/js/bottle_add.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/mobile.js') ?>"></script>
 
+<script type="text/javascript">
+$( document ).ready( function() {
+	
+	$('.login_button').click( function() {
+		$('.alerts_box').slideDown( function(){
+			$('.alerts_box').delay( 3000 ).slideUp();
+		});
+	});	
+});
+</script>
+
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>

@@ -57,7 +57,7 @@
                        </div>
                         
                           <input class="login_button" type="submit" name="submit" value="KAYDET" />
-                          <div id="changePasswordForm_back"></div>
+                          <div id="changePasswordForm_back" class="alerts_box"></div>
                         
                     </div>     
                 

@@ -67,7 +67,7 @@ class Register extends CI_Controller {
                 $this->form_validation->set_rules('email', 'Email', 'required|valid_email|xss_clean');
                 $this->form_validation->set_rules('password', 'Şifre', 'required|trim|min_length[6]|max_length[50]|xss_clean|md5');
                 $this->form_validation->set_message('required', '- %s '.' alanları zorunludur.');  
-                    $this->form_validation->set_error_delimiters('<blockquote><p class="error">', '</p></blockquote>');
+                    $this->form_validation->set_error_delimiters('<div class="alert_error">', '</div>');
                 if ($this->form_validation->run()) 
                 {
                     $sql=$this->db->query("select * from users where email='".$email."' limit 0,1");
@@ -160,7 +160,7 @@ class Register extends CI_Controller {
                     $this->form_validation->set_rules('phoneAreaCode','Alan Kodu','required|min_length[3]|max_length[3]|xss_clean|numeric');
                     $this->form_validation->set_rules('phone','Telefon','required|min_length[7]|max_length[7]|xss_clean|numeric');
                     $this->form_validation->set_message('required', '- %s '.' alanlarının doldurulması zorunludur');  
-                    $this->form_validation->set_error_delimiters('<blockquote><p class="error">', '</p></blockquote>');
+                    $this->form_validation->set_error_delimiters('<div class="alert_error">', '</div>');
 
 
                     if ($this->form_validation->run()) 
@@ -196,10 +196,10 @@ class Register extends CI_Controller {
                                         "; 
 
                                         if ( ! $this->emailmodel->send_email($email,$title,$content)){
-                                            echo '<p class="error"><br/>Aktivasyon maili gonderiminde problem yasandi lutfen mail adresinizi kontrol ediniz.</p>';
+                                            echo '<div class="alert_error">Aktivasyon maili gonderiminde problem yasandi lutfen mail adresinizi kontrol ediniz.</div>';
                                         }
                                         else {
-                                            echo '<p class="is_ok"><br/>Üyelik aktivasyonu gönderildi</p>';                                            
+                                            echo '<div class="alert_pass"><br/>Üyelik aktivasyonu gönderildi</div>';                                            
                                         }
                                     }
                                 }

@@ -124,7 +124,7 @@ class Profile extends CI_Controller {
 
             if ($this->form_validation->run() == FALSE)
             {                        
-                echo validation_errors('<div class="form_error">', '</div>');
+                echo validation_errors('<div class="alert_error">', '</div>');
             }
             else {
                 $member_id=$this->session->userdata('userid');
@@ -194,7 +194,7 @@ class Profile extends CI_Controller {
 
             if ($this->form_validation->run() == FALSE)
             {                        
-                echo validation_errors('<div class="form_error">', '</div>');
+                echo validation_errors('<div class="alert_error">', '</div>');
             }
             else {
                 $member_id=$this->session->userdata('userid');
@@ -285,7 +285,7 @@ class Profile extends CI_Controller {
                     $this->form_validation->set_rules('phoneAreaCode','Alan Kodu','required|min_length[3]|max_length[3]|xss_clean|numeric');
                     $this->form_validation->set_rules('phone','Telefon','required|min_length[7]|max_length[7]|xss_clean|numeric');
                     $this->form_validation->set_message('required', '- %s '.' alanlarının doldurulması zorunludur');  
-                    $this->form_validation->set_error_delimiters('<blockquote><p class="error">', '</p></blockquote>');
+                    $this->form_validation->set_error_delimiters('<div class="alert_error">', '</div>');
 
                     if ($this->form_validation->run()) 
                     {
@@ -304,7 +304,7 @@ class Profile extends CI_Controller {
                                     $this->db->where('id',$this->session->userdata('userid'));
                                     if ($this->db->update('users',$eklenecek))
                                     {
-                                        echo "Değişiklikler Kaydedildi.";                                        
+                                        echo '<div class="alert_pass">Değişiklikler Kaydedildi.</div>';                                        
                                     }
                                 }                        
                     }
@@ -348,7 +348,7 @@ class Profile extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE)
         {
-           echo validation_errors('<div class="form_error">', '</div>');
+           echo validation_errors('<div class="alert_error">', '</div>');
         }
         else
         {
@@ -356,7 +356,7 @@ class Profile extends CI_Controller {
             $sql=$this->db->query("select * from users where id=".$this->db->escape($member_id)."");
             foreach($sql->result() as $profile) {
                 if ($profile->password<>md5($old_password)) {
-                    echo '<div class="form_error">Eski şifrenizi kontrol ediniz.</div>';
+                    echo '<div class="alert_error">Eski şifrenizi kontrol ediniz.</div>';
                 }
                 else {
                     $datas=array(
@@ -365,7 +365,7 @@ class Profile extends CI_Controller {
                     );
                     $this->db->where('id',$profile->id);
                     if ($this->db->update('users',$datas)) {
-                        echo "Şifre değişikliğiniz kaydedildi";
+                        echo '<div class="alert_pass">Şifre değişikliğiniz kaydedildi</div>';
                     }
                 }
             }

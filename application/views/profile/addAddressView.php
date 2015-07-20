@@ -104,7 +104,7 @@
                                 <input class="input_box" type="text" name="zipcode" placeholder="Posta Kodu" />
                             </div>
                         </div>
-                        <div id="addAddressForm_back"></div>
+                        <div id="addAddressForm_back" class="alerts_box"></div>
                         <input class="login_button" type="submit" name="submit" value="KAYDET">
                         
                     </div>     

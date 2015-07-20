@@ -105,7 +105,7 @@
                                 <input class="input_box" type="text" name="zipcode" placeholder="Posta Kodu" value="<?php echo $address->zip_code ?>"  />
                             </div>
                         </div>
-                        <div id="editAddressForm_back"></div>
+                        <div id="editAddressForm_back" class="alerts_box"></div>
                         <input class="login_button" type="submit" name="submit" value="KAYDET">
                         
                     </div>     

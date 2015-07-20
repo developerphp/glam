@@ -19,14 +19,15 @@
                 <?php if ($login==1) { ?>
                 <span><?php echo $this->session->userdata('name').' '.$this->session->userdata('surname') ?></span>
                 
-                    <div class="h_profile_menu">
-                        <ul>
-                            <li><a href="<?php echo base_url('profile/edit') ?>">Üyelik Bilgileri</a></li>
-                            <li><a href="<?php echo base_url('profile/address') ?>">Adres Defteri</a></li>
-                            <li><a href="<?php echo base_url('profile/orders') ?>">Sipraişlerim</a></li>
-                            <li><a href="<?php echo base_url('register/logout') ?>">Çıkış Yap</a></li>
-                        </ul>
-                    </div>
+                    <nav class="h_profile_menu">
+                    	<ul>
+                           <li><a href="<?php echo base_url('profile/edit') ?>">Üyelik Bilgileri</a></li>
+                           <li><a href="<?php echo base_url('profile/address') ?>">Adres Defteri</a></li>
+                           <li><a href="<?php echo base_url('profile/orders') ?>">Sipraişlerim</a></li>
+                           <li><a href="<?php echo base_url('register/logout') ?>">Çıkış Yap</a></li>
+                       </ul>
+                    </nav>
+                    
                 <?php } else {?>
                 <a href="<?php echo base_url('register/login') ?>"><span>Giriş Yap</span></a>
                 <?php }?>
@@ -42,18 +43,16 @@
 
 	<div id="m_close"></div>
     
-    <div class="main_menu">
+    <nav class="main_menu">
     
-        <ul>
-            <li><a>GLAM</a></li>
-            <li><a href="<?php echo base_url('detox') ?>">DETOX</a></li>
-            <li><a href="<?php echo base_url('eats') ?>">EAT</a></li>
-            <li><a href="<?php echo base_url('drinks') ?>">DRINKS</a></li>
-            <li><a>SHOP</a></li>
-            <li><a>MEET</a></li>
-        </ul>
+      <a>GLAM</a>
+      <a href="<?php echo base_url('detox') ?>">DETOX</a>
+      <a href="<?php echo base_url('eats') ?>">EAT</a>
+      <a href="<?php echo base_url('drinks') ?>">DRINKS</a>
+      <a>SHOP</a>
+      <a>MEET</a>
         
-    </div>
+    </nav>
 
 </div>
 

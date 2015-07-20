@@ -245,32 +245,49 @@ header{
 	  width: 100%;
 	}
 
-	ul{
-		li{
-			font-size: 14px !important;
-			list-style: none;
-			display: inline;
-			margin: 20px;
-			font-weight: 400;
+	a{
+		font-size: 14px !important;
+		margin: 20px;
+		font-weight: 400;
+		text-align: center;
+		position: relative;
+
+		&:after{
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: rgba(0,0,0,1);
+			content: '';
+			opacity: 0;
+			-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+			-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+			transition: opacity 0.3s, transform 0.3s;
+			-webkit-transform: translateY(10px);
+			-moz-transform: translateY(10px);
+			transform: translateY(10px);
+		}
+
+		@include xs{
+			color: $c_white !important;
+		}
+
+		&:hover:after{
+			opacity: 1;
+			-webkit-transform: translateY(3px);
+ 			-moz-transform: translateY(3px);
+  			transform: translateY(3px);
+		}
 			
-			@include sm{
-				margin: 11px;
-			}
+		@include sm{
+			margin: 11px;
+		}
 
-			@include xs{
-				 font-size: 40px !important;
-				 display: block;
-  				margin: 30px;
-			}
-
-			a{
-				@include xs{
-					color: $c_white !important;
-				}
-				&:hover{
-					text-decoration: underline;
-				}
-			}
+		@include xs{
+			font-size: 40px !important;
+			display: block;
+  			margin: 30px;
 		}
 	}
 }
@@ -1010,11 +1027,12 @@ footer{
 	   	width: 100%;
 		height: 40px;
 		padding-left: 10px;
-		font-size: 12px;
-		line-height: 1;  
 		border-radius: 0;
-		border: 1px solid $c_gray; 
+		border: 0px;
+		border-bottom: 1px solid $c_gray; 
 	   -webkit-appearance: none;
+		font-size: 14px;
+		font-weight: 500;
 	}
 }
 
@@ -1116,4 +1134,35 @@ footer{
 	margin-top: 10px;
 	font-size: 16px;
 	text-align: center;
+}
+
+/*alerts*/
+.alerts_box {
+  display: none;
+  z-index: 9999;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  text-align: center;
+  font-size: 12px;
+
+	.alert_pass{
+	  background-color: $c_green;
+	  width: 100%;
+	  padding: 10.5px 0 10.5px 0;
+	}
+
+	.alert_error{
+	  background-color: red;
+	  width: 100%;
+	  padding: 10.5px 0 10.5px 0;
+	}
+
+	.form_error{
+	  background-color: red;
+	  width: 100%;
+	  padding: 10.5px 0 10.5px 0;
+	}
 }

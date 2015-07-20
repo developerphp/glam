@@ -77,7 +77,7 @@
                         </div>
                         
                           <input class="login_button" type="submit" name="submit" value="KAYDET" />
-                          <div id="registerForm_back"></div>
+                          <div id="registerForm_back" class="alerts_box"></div>
                         
                     </div>     
                 </div>
