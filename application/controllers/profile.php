@@ -16,6 +16,7 @@ class Profile extends CI_Controller {
                     $datas['profile_menu']='dashboard';
                     $datas['ptitle']="üyelik bilgilerim";
                     $datas['profile']=$profile;
+					$datas["selectnav"]="edit";
                     $this->load->view('profile/profileView',$datas);
                 }                    
             }                
@@ -35,6 +36,7 @@ class Profile extends CI_Controller {
             
             if (is_numeric($userid)) {      
                 $datas['userid']=$userid;
+				$datas["selectnav"]="orders";
                 $this->load->view('profile/ordersView',$datas);   
             }                
         }
@@ -53,6 +55,7 @@ class Profile extends CI_Controller {
             
             if (is_numeric($userid)) {      
                 $datas['userid']=$userid;
+				$datas["selectnav"]="address";
                 $this->load->view('profile/addressView',$datas);   
             }                
         }
@@ -75,6 +78,7 @@ class Profile extends CI_Controller {
                     $sql=$this->db->query("select * from address where user_id=".$userid." and id=".$id."");
                     foreach($sql->result() as $address) {
                         $datas['address']=$address;
+						$datas["selectnav"]="address";
                         $this->load->view('profile/editAddressView',$datas);   
                     }
                 }                
@@ -251,7 +255,8 @@ class Profile extends CI_Controller {
             
             $userid=$this->session->userdata('userid');
             
-            if (is_numeric($userid)) {                    
+            if (is_numeric($userid)) { 
+				$datas["selectnav"]="address";                  
                 $this->load->view('profile/addAddressView',$datas);   
             }                
         }
@@ -328,6 +333,7 @@ class Profile extends CI_Controller {
         $datas["login"]=$login;
         if ($login==1) {
             $datas['profile_menu']='change_password';
+			$datas["selectnav"]="changepass";
             $this->load->view('profile/changePasswordView',$datas);
         }
         else {

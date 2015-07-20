@@ -5,6 +5,7 @@ class Detox extends CI_Controller {
 	public function index()
 	{            
         $datas["login"]=$this->session->userdata('login');
+		$datas["selectnav"]="detox";
         $this->load->view('detoxView',$datas);
 	}
 

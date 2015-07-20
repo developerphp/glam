@@ -6,9 +6,7 @@
 <main>
     <div class="container-fluid">
         <div class="row">
-            <div class="login_cover">
-                <img src="assets/images/detox_cover.png" alt="cover">
-            </div>
+                <img src="assets/images/detox_cover.png" alt="cover" width="100%">
         </div>
     </div>
             

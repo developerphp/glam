@@ -5,6 +5,7 @@ class Drinks extends CI_Controller {
 	public function index()
 	{            
         $datas["login"]=$this->session->userdata('login');
+		$datas["selectnav"]="drinks";
         $this->load->view('drinksView',$datas);
 	}
 

@@ -4,18 +4,17 @@
 <?php $this->load->view('includes/header') ?>
  <main>
   <section>
+  
+    <div class="container-fluid">
+    	<div class="row">
+            <div class="login_cover">
+                <div class="tint"></div>
+                <div class="l_cover_txt">ÜYELİK BİLGİLERİ</div>
+            </div>
+          </div> 
+	</div>
     
       <div class="container">
-        
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="login_cover">
-                        <div class="tint"></div>
-                        <div id="cover_txt" class="l_cover_txt">ÜYE OL</div>
-                        <img src="<?php echo base_url('assets/images/l_cover.png') ?>" alt="cover">
-                    </div>
-                </div> 
-            </div> 
             
             <?php $this->load->view('profile/nav') ?>
             
