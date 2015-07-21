@@ -12,6 +12,7 @@ class Register extends CI_Controller {
 
 	public function index() {
 	    $login=$this->session->userdata('login');            
+        $datas["selectnav"]="";
 	    if ($login<>1) {
 	        $datas["login"]=$login;
 	        $this->load->view('profile/registerView',$datas);
@@ -24,6 +25,7 @@ class Register extends CI_Controller {
     public function login() {
         $login=$this->session->userdata('login');            
         $datas["login"]=$login;
+        $datas["selectnav"]="";
         if ($login<>1) {                
             $this->load->view('profile/loginView',$datas);
         }

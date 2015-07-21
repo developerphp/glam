@@ -11,6 +11,7 @@ class Drinks extends CI_Controller {
 
 	public function detail($id) {
 		$datas["login"]=$this->session->userdata('login');
+		$datas["selectnav"]="drinks";
 		if (is_numeric($id)) {
 			$sql=$this->db->query("
 				select 

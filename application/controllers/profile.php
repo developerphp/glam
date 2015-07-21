@@ -6,6 +6,7 @@ class Profile extends CI_Controller {
 	{   
         $login=$this->session->userdata('login');
         $datas["login"]=$login;
+        $datas["selectnav"]="";
         if ($login==1) {
             
             $userid=$this->session->userdata('userid');
@@ -30,6 +31,7 @@ class Profile extends CI_Controller {
     {   
         $login=$this->session->userdata('login');
         $datas["login"]=$login;
+        $datas["selectnav"]="";
         if ($login==1) {
             
             $userid=$this->session->userdata('userid');
@@ -49,6 +51,7 @@ class Profile extends CI_Controller {
     {   
         $login=$this->session->userdata('login');
         $datas["login"]=$login;
+        $datas["selectnav"]="";
         if ($login==1) {
             
             $userid=$this->session->userdata('userid');
@@ -68,6 +71,7 @@ class Profile extends CI_Controller {
     {   
         $login=$this->session->userdata('login');
         $datas["login"]=$login;
+        $datas["selectnav"]="";
         if ($login==1) {
             
             $userid=$this->session->userdata('userid');
@@ -331,6 +335,7 @@ class Profile extends CI_Controller {
     public function changePassword() {
         $login=$this->session->userdata('login');
         $datas["login"]=$login;
+        $datas["selectnav"]="";
         if ($login==1) {
             $datas['profile_menu']='change_password';
 			$datas["selectnav"]="changepass";
