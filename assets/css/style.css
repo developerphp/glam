@@ -634,12 +634,99 @@ header .container-fluid {
   cursor: pointer;
 }
 
+.cancel_order {
+  background: url(../images/close.png);
+  width: 12px;
+  height: 13px;
+  margin-top: 23px;
+  cursor: pointer;
+}
+
 .order_count {
   width: 40px;
   height: 40px;
   padding-top: 12px;
   background: #e5e5e5;
   text-align: center;
+}
+
+.summary_box {
+  padding: 30px 0 30px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.summary_box .total {
+  padding: 0;
+}
+
+.summary_box .total span {
+  display: block;
+  font-size: 16px;
+  text-align: right;
+}
+
+.summary_box .back {
+  padding-top: 25px;
+}
+
+.summary_box .back:before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 0px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #231f20;
+}
+
+.checkout_box {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 30px 0 30px 0;
+}
+
+.checkout_box input {
+  margin-right: 10px;
+}
+
+.checkout_box strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.checkout_note {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 30px 0 30px 0;
+}
+
+.checkout_note strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.checkout_note textarea {
+  resize: none;
+  background: #f7f7f7;
+  width: 100%;
+  border: 0px;
+  height: 200px;
+  padding: 15px;
+}
+
+.order_accept {
+  margin-top: 30px;
+}
+
+.order_accept span {
+  font-size: 14px;
+}
+
+.order_accept .check {
+  margin-top: 2px;
+  width: 20px;
+  height: 20px;
+  float: left;
 }
 
 .bottles_fixed {
@@ -857,7 +944,7 @@ header .container-fluid {
   }
 }
 
-.title {
+.drinks .title {
   text-align: center;
   font-size: 22px;
   font-weight: 400;
@@ -865,19 +952,19 @@ header .container-fluid {
   margin-bottom: 10px;
 }
 
-.desc {
+.drinks .desc {
   text-align: center;
   font-size: 14px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .desc {
+  .drinks .desc {
     margin-bottom: 30px;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .desc {
+  .drinks .desc {
     margin-bottom: 30px;
   }
 }
@@ -1261,6 +1348,10 @@ footer {
   }
 }
 
+.login_box .title {
+  font-size: 14px;
+}
+
 .login_left {
   border-right: 1px solid #e5e5e5;
 }
@@ -1418,6 +1509,40 @@ footer {
 .lost_pass {
   float: left;
   margin-top: 10px;
+}
+
+.order_title {
+  width: 100%;
+  text-align: center;
+  margin: 40px 0 40px 0;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.order_pickup {
+  width: 100%;
+  text-align: center;
+  margin: 40px 0 40px 0;
+}
+
+.order_pickup span {
+  font-size: 14px;
+  display: inline-block;
+}
+
+.order_pickup .title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.order_pickup .check {
+  margin-top: 2px;
+  width: 20px;
+  height: 20px;
+  float: left;
 }
 
 .hover_desc {

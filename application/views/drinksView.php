@@ -3,7 +3,7 @@
 <body>
 <?php $this->load->view('includes/header') ?>
         
-<div class="container">
+<div class="container drinks">
     <?php 
     $sql=$this->db->query("select * from product_categories where catid=4 order by reorder asc"); 
     foreach($sql->result() as $category) {

@@ -8,12 +8,17 @@ $f_didot: 'Didot 06 A', 'Didot 06 B';
 
 $c_black: #231f20; 
 $c_white: #fff;
+
 $c_header: #f2f3f2;
 $c_footer: #373737;
+
 $c_lightGreen: #6f886a;
 $c_lighterGreen: #91b28b;
 $c_green: #567151;
+
 $c_gray: #e5e5e5;
+$c_lightGray: #f7f7f7;
+
 $c_red: #e74c3c;
 
 body{
@@ -358,12 +363,92 @@ header{
 	cursor: pointer;
 }
 
+.cancel_order{
+	background: url(../images/close.png);
+	width: 12px;
+	height: 13px;
+	margin-top: 23px;
+	cursor: pointer;
+}
+
 .order_count{
 width: 40px;
 height: 40px;
 padding-top: 12px;
 background: $c_gray;
 text-align: center;
+}
+
+.summary_box{
+	padding: 30px 0 30px 0;
+	border-bottom: 1px solid $c_gray;
+	.total{
+		padding:0;
+		span{
+			display: block;
+			font-size: 16px;
+			text-align: right;
+		}
+	}
+	.back{
+		padding-top: 25px;
+		&:before{
+			  content: "";
+			  position: absolute;
+			  top: 28px;
+			  left: 0px;
+			border-top: 5px solid transparent;
+			border-bottom: 5px solid transparent; 
+			border-right:5px solid $c_black; 
+		}
+	}
+}
+
+.checkout_box{
+  border-bottom: 1px solid $c_gray;
+  padding: 30px 0 30px 0;
+
+  input{
+  	margin-right: 10px;
+	}
+	strong {
+	  display: block;
+	  margin-bottom: 10px;
+	  font-size: 14px;
+	}
+}
+
+.checkout_note {
+	border-bottom: 1px solid $c_gray;
+	padding: 30px 0 30px 0;
+
+	strong{
+		display: block;
+	  margin-bottom: 10px;
+	  font-size: 14px;
+	}
+	textarea{
+		resize: none;
+  		background: $c_lightGray;
+  		width:100%;
+ 		border: 0px;
+  		height: 200px;
+  		padding: 15px;
+	}
+}
+
+.order_accept{
+	margin-top: 30px;
+
+	span{
+		font-size: 14px;
+	}
+	.check{
+		margin-top: 2px;
+		width: 20px;
+		height: 20px;
+		float: left;
+	}
 }
 
 .bottles_fixed {
@@ -576,23 +661,25 @@ text-align: center;
 	}	
 }
 
-.title{
-	text-align: center;
-	font-size: 22px;
-	font-weight: 400;
-	font-family: $f_georgia;
-	margin-bottom: 10px;
-}
-
-.desc{
-	text-align: center;
-	font-size: 14px;
-	@include sm{
-		margin-bottom: 30px;
+.drinks{
+	.title{
+		text-align: center;
+		font-size: 22px;
+		font-weight: 400;
+		font-family: $f_georgia;
+		margin-bottom: 10px;
 	}
-	@include xs{
-		margin-bottom: 30px;
-	}		
+
+	.desc{
+		text-align: center;
+		font-size: 14px;
+		@include sm{
+			margin-bottom: 30px;
+		}
+		@include xs{
+			margin-bottom: 30px;
+		}		
+	}
 }
 
 .bottle_box{
@@ -945,6 +1032,9 @@ footer{
 		margin-bottom: 60px;
 		padding: 0px;
 	}
+	.title{
+		font-size: 14px;
+	}
 }
 
 .login_left{
@@ -1102,6 +1192,39 @@ footer{
 .lost_pass {
 	float: left;
 	margin-top: 10px;
+}
+
+.order_title{
+  width: 100%;
+  text-align: center;
+  margin: 40px 0 40px 0;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+
+.order_pickup{
+	width: 100%;
+	text-align: center;
+	margin: 40px 0 40px 0;
+	span{
+  		font-size: 14px;
+  		display:inline-block;
+	}
+	.title{
+		 display: block;
+		 width: 100%;
+		 text-align: center;
+		 margin-bottom: 10px;
+	}
+	.check{
+		margin-top: 2px;
+		width: 20px;
+		height: 20px;
+		float: left;
+	}
 }
 
 .hover_desc{
