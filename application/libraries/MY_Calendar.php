@@ -489,7 +489,7 @@ class MY_Calendar {
 	function default_template()
 	{
 		return  array (						
-						'heading_title_cell'		=> '<h2 style="font-family: \'Gotham SSm A\', \'Gotham SSm B\'; ">{heading}</h2>',
+						'heading_title_cell'		=> '',
 						'table_open'				=> '<div id="calendarCarousel" class="carousel">',
 						'heading_previous_cell'		=> '<a class="calendar_nav calendar_prev" href="javascript:void(0);" onclick="loadcalendar({previous_url})"><span class="icon-prev"></span></a>',
 						'heading_next_cell'			=> '<a class="calendar_nav calendar_next" href="javascript:void(0);" onclick="loadcalendar({next_url})"><span class="icon-next"></span></a>',
