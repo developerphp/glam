@@ -26,6 +26,7 @@ class Register extends CI_Controller {
         $login=$this->session->userdata('login');            
         $datas["login"]=$login;
         $datas["selectnav"]="";
+        $datas["url"]=$this->input->get('url');
         if ($login<>1) {                
             $this->load->view('profile/loginView',$datas);
         }
@@ -36,6 +37,7 @@ class Register extends CI_Controller {
 
     public function loginForm_do()
         {
+
             $login=$this->session->userdata('login');            
             if ($login<>1) {
                 $this->load->helper('form'); 
@@ -51,14 +53,14 @@ class Register extends CI_Controller {
                 
                 
                 
-                if (!valid_email($email)) { echo $this->lang->line('err_email_gir'); 
+                if (!valid_email($email)) { echo '<div class="alert_error">Lütfen email adresinizi giriniz</div>';
                     ?>
                     <script>
                     $('input[name=email]').addClass('error_input');
                     </script>
                     <?php
                 exit(); }
-                if (strlen($password)<6) { echo $this->lang->line('err_kullanici_adi_gir'); 
+                if (strlen($password)<6) { echo '<div class="alert_error">Lütfen şifrenizi giriniz</div>';
                     ?>
                     <script>
                     $('input[name=password]').addClass('error_input');
@@ -71,21 +73,21 @@ class Register extends CI_Controller {
                 $this->form_validation->set_message('required', '- %s '.' alanları zorunludur.');  
                     $this->form_validation->set_error_delimiters('<div class="alert_error">', '</div>');
                 if ($this->form_validation->run()) 
-                {
+                {                    
                     $sql=$this->db->query("select * from users where email='".$email."' limit 0,1");
                     if ($sql->num_rows()==0) {
-                        echo $this->lang->line('uye_kayitli_degil');
+                        echo 'Bu bilgilerle kayıtlı bir üyemiz bulunmamaktadır';
                         ?>
                         <script>
                         $('input[name=email] , input[name=password]').addClass('error_input');
                         </script>
-                        <?php
+                        <?php                        
                     }
-                    else {
+                    else {                        
                         foreach($sql->result() as $uye) {
                             if (md5($password)==$uye->password) {
                                 if ($uye->approval==0) {
-                                    echo "Üyelik henüz aktif edilmemiş";
+                                    echo '<div class="alert_error">Üyelik henüz aktif edilmemiş</div>';
                                     ?>
                                     <script>
                                     $('input[name=email] , input[name=password]').addClass('error_input');
@@ -107,12 +109,16 @@ class Register extends CI_Controller {
                                      
                                 ?>
                                 <script>
+                                <?php if (strlen($url)>0) { ?>
                                     parent.location.href='<?php echo $url ?>';
+                                <?php } else {?> 
+                                    parent.location.href='<?php echo base_url("profile/edit") ?>';
+                                <?php }?>
                                 </script>
                                 <?php
                             }
                             else {
-                                echo "Lütfen bilgilerinizi kontrol ediniz";
+                                echo '<div class="alert_error">Lütfen bilgilerinizi kontrol ediniz</div>';
                             }
                         }
                     }
@@ -123,7 +129,7 @@ class Register extends CI_Controller {
                 
             }
             else {
-                echo "Zaten giriş yapmışsınız.";
+                echo '<div class="alert_error">Zaten giriş yapmışsınız.</div>';
             }
         }
 

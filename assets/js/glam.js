@@ -28,6 +28,12 @@ $(document).ready(function(){
         return false;
     });
 
+    $('.target_ajax').click(function(){
+        $href=$(this).attr('href');
+        $('#hidden_div').load($href);
+        return false;
+    })
+
 
     $('.adress_remove').click(function(){
         if (confirm('Silmek istediğinizden emin misiniz?')) {

@@ -28,9 +28,8 @@
                             <input class="input_box" type="email" name="email" placeholder="Email" />
                             
                             <input class="input_box" type="password" name="password" placeholder="Şifre" />
-                            
+                            <input type="hidden" name="url" value="<?php echo $url ?>" />
                             <input class="login_button" type="submit" name="submit" value="GİRİŞ YAP">
-                            <input type="hidden" name="url" value="<?php echo base_url('profile/edit') ?>">
                             <div id="loginForm_back" class="alerts_box"></div>
                         </form>
                         <div class="lost_pass"><a>Şifremi unuttum</a></div>

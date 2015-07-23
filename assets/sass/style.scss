@@ -1304,3 +1304,68 @@ footer{
 	  padding: 10.5px 0 10.5px 0;
 	}
 }
+
+#calendar {
+	width:800px;
+	margin:0 auto;
+	position:relative;
+	text-align:center;
+	h2 {
+		text-align: center;
+	}
+	.item {
+		.day {
+			display: inline-block;
+			border:solid 1px $c_gray;
+			width:110px;
+			padding:10px 0;
+			text-align: center;		
+			font-size:16px;
+			strong {
+				display: block;
+				width:110px;
+				height:80px;
+				background:#000;
+				color:#fff;
+			}
+			span {
+				display: block;
+				font-size:12px;
+				font-style: italic;
+			}
+		}
+	}
+	.carousel-control {
+		width:10px;
+		background:none;
+		span 
+		{
+			display: none;
+		}
+		&.left {
+			left:-20px;
+			background:url(../images/leftArrow.png) no-repeat center center;			
+		}
+		&.right {
+			right:-20px;
+			background:url(../images/rightArrow.png) no-repeat center center;			
+		}
+	}
+	.calendar_nav {
+		position:absolute;
+		right:-20px;
+		display: block;
+		width:10px;
+		height:100%;
+		top:0;
+		display: none;
+		&.calendar_next {
+			background:url(../images/rightArrow.png) no-repeat center center;
+		}
+		&.calendar_prev {
+			right:auto;
+			left:-20px;
+			background:url(../images/leftArrow.png) no-repeat center center;
+		}
+	}
+}
