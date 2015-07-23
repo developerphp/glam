@@ -1033,7 +1033,9 @@ footer{
 		padding: 0px;
 	}
 	.title{
+		display: block;
 		font-size: 14px;
+		margin: 20px 0px 10px 0px;
 	}
 }
 
@@ -1132,6 +1134,11 @@ footer{
 	margin-bottom: 25px;
 	background: url(../images/select_arrow.png) no-repeat;
 	background-position: right 10px center;
+
+	a{
+		display: block;
+		margin-top: 10px;
+	}
 
 	select{
 		background: transparent;

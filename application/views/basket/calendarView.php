@@ -59,6 +59,7 @@
                   <select name="address1">
                     <option>EV</option>
                   </select>
+                  <a href="">+ Adres Ekle</a>
                 </div>
               </div>
               <div class="col-md-6 col-sm-6"> <span class="title">Fatura Adresi</span>
@@ -66,6 +67,7 @@
                   <select name="address2">
                     <option>EV</option>
                   </select>
+                  <a href="">+ Adres Ekle</a>
                 </div>
               </div>
             </div>
