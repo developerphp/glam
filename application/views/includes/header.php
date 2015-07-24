@@ -50,7 +50,7 @@
       <a <?php if( $selectnav == "detox" ) {echo 'class="menu_active"';} ?> href="<?php echo base_url('detox') ?>">DETOX</a>
       <a <?php if( $selectnav == "eats" ) {echo 'class="menu_active"';} ?> href="<?php echo base_url('eats') ?>">EAT</a>
       <a <?php if( $selectnav == "drinks" ) {echo 'class="menu_active"';} ?> href="<?php echo base_url('drinks') ?>">DRINKS</a>
-      <a>SHOP</a>
+      <a <?php if( $selectnav == "shop" ) {echo 'class="menu_active"';} ?> href="<?php echo base_url('shop') ?>">SHOP</a>
       <a>MEET</a>
         
     </nav>
