@@ -6,7 +6,9 @@
 <body>
 <?php $this->load->view('includes/header') ?>
   
-  <div id="alert_box"></div>
+  <div id="alert_box">
+  	<div id="alert1" class="alert alert-danger" role="alert">Zaten 6 tane ekledin bebişim.</div>
+  </div>
 
   <div class="bottles_fixed">
         <div class="row">

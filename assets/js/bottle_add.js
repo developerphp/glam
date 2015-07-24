@@ -1,6 +1,7 @@
 $( document ).ready(function() {
 	
 	var added = 0;
+	var alert1 = 0;
 	
 //***START OF A BOTTLE***	
 
@@ -9,15 +10,17 @@ $( document ).ready(function() {
 //if more than 5 bottles warn me and kill this
 		if(added>5) {
 			
-			var $addalert = $('<div id="alert1" class="alert alert-danger" role="alert">Zaten 6 tane ekledin bebişim.</div>');
+			if(alert1===0) {
+				alert1 = 1;
+				$('#alert_box').slideDown();
+				$('#alert_box').delay(1500).slideUp(function(){
+					alert1 = 0;
+				});
+			}
 			
-			$('#alert_box').append($addalert);
-			
-			$addalert.hide().slideDown();
-			
-			$('#alert_box #alert1').delay(1500).slideUp( function(){
-  				$(this).remove();
-			});
+			else {
+				return false;
+			}
 			
 			return false;
 		}
@@ -28,7 +31,12 @@ $( document ).ready(function() {
 			var $addthis = $( this ).clone().css( "opacity", "0" );
 			$addthis.appendTo("#bottles form").animate({ opacity: "1" });
 
-			$addthis.find('.remove_button').delay(600).animate({ opacity: "1" });
+			$addthis.find('.remove_button').delay(400).animate({ opacity: "1" });
+			
+			//setTimeout(function(){
+//				$addthis.find('.remove_button').css("opacity", "0");
+//				$addthis.find('.remove_button').css("opacity", "1");
+//			},1500);
 			 
 			//add button tick
 			$(this).find('.add_button').css("background", "url(assets/images/added.png)");
