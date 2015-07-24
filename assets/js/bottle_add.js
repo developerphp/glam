@@ -27,7 +27,7 @@ $( document ).ready(function() {
 			added = added+1;
 			
 			var $addthis = $( this ).clone().css( "opacity", "0" );
-			$addthis.appendTo("#bottles").animate({ opacity: "1" });
+			$addthis.appendTo("#bottles form").animate({ opacity: "1" });
 
 			$addthis.find('.remove_button').delay(600).animate({ opacity: "1" });
 			 

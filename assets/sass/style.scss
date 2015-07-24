@@ -473,35 +473,6 @@ text-align: center;
 	}
 }
 
-#bottles {
-	
-	width: 480px;
-	margin: 40px auto;
-	margin-bottom: 0px;
-	position: relative;
-	display: table;
-	height: 200px;
-
-	.be1 {
-    left: 20px;
-	}
-	.be2 {
-    left: 100px;
-	}
-	.be3 {
-    left: 180px;
-	}
-	.be4 {
-    left: 260px;
-	}
-	.be5 {
-    left: 340px;
-	}
-	.be6 {
-    left: 420px;
-	}
-}
-
 .bottle {
 	width: 20%;
 	border: 2px solid #fff;
@@ -538,16 +509,42 @@ text-align: center;
 }
 
 #bottles {
+	width: 480px;
+	margin: 40px auto;
+	margin-bottom: 0px;
+	position: relative;
+	display: table;
+	height: 200px;
+
+	.be1 {
+    left: 20px;
+	}
+	.be2 {
+    left: 100px;
+	}
+	.be3 {
+    left: 180px;
+	}
+	.be4 {
+    left: 260px;
+	}
+	.be5 {
+    left: 340px;
+	}
+	.be6 {
+    left: 420px;
+	}
+
 	@include xs{
 		height: 0px !important;
 	}
 	.bottle {
 
 		border: 0px solid #fff;
-		width: 40px;
+		width: 65px;
 		height: 107px;
-		margin-right: 20px;
-		margin-left: 20px;
+		margin-right: 7.5px;
+		margin-left: 7.5px;
 		padding: 0;
 
 		.bottle_desc {
