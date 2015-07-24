@@ -21,7 +21,6 @@
 </script>
 
 <script src="<?php echo base_url('assets/js/glam.js') ?>"></script>
-<script src="<?php echo base_url('assets/js/bottle_add.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/mobile.js') ?>"></script>
 
 <script type="text/javascript">

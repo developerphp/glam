@@ -477,11 +477,10 @@ text-align: center;
 	width: 20%;
 	border: 2px solid #fff;
 	border-radius: 5px;
-	transition: all 0.3s ease;
+	// transition: all 0.3s ease;
 	float: left;
 	padding: 20px 40px 70px 40px;
-	position: relative;
-
+	position: relative;	
 	@include xs{
 	width: 50%;	
 	}
@@ -498,7 +497,7 @@ text-align: center;
 	&:hover {
 	
 		border: 2px solid #273924;
-		transition: all 0.3s ease;
+		// transition: all 0.3s ease;
 
 		.add_button {
 			transition: all 0.3s ease;
@@ -546,7 +545,6 @@ text-align: center;
 		margin-right: 7.5px;
 		margin-left: 7.5px;
 		padding: 0;
-
 		.bottle_desc {
 			font-size: 12px;
 			width: 80px;

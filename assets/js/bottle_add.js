@@ -6,7 +6,6 @@ $( document ).ready(function() {
 
 //add bottle
 	$(".bottle").click(function() {
-		
 //if more than 5 bottles warn me and kill this
 		if(added>5) {
 			
