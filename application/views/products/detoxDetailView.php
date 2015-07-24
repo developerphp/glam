@@ -39,7 +39,14 @@
                             }?>
                         </ul>
                         
-                    <!-- <a class="a_none"><div class="addtocart_button">ÜYE OL</div></a> -->
+                    <?php 
+                    $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+                    if ($login==1) {?>
+                    <a class="a_none target_ajax" href="<?php echo base_url('basket/add/'.$product->id) ?>"><div class="addtocart_button">SATIN AL</div></a>
+                    <?php } else { ?>
+                    <a class="a_none" href="<?php echo base_url('register/login/?url='.$actual_link) ?>"><div class="addtocart_button">GİRİŞ YAP</div></a>
+                    <?php }?>
                     
                     <div class="details_share">
                       <span>Paylaş</span>

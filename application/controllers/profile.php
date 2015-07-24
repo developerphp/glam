@@ -110,6 +110,8 @@ class Profile extends CI_Controller {
             $companyName=$this->input->post('companyName');
             $tax_name=$this->input->post('tax_name');
             $tax_number=$this->input->post('tax_number');
+
+            $url=$this->input->post('url');
             
             $this->load->helper('form');
             $this->load->library('form_validation');
@@ -153,7 +155,11 @@ class Profile extends CI_Controller {
                         'tax_number'=>$tax_number
                     );
                     if ($this->db->insert('address',$datas)) {
-                        ?><script>location.href='<?php echo base_url("profile/address") ?>'</script><?php
+                        if (strlen($url)>0) {
+                            ?><script>location.href='<?php echo $url ?>'</script><?php
+                        }  else {
+                            ?><script>location.href='<?php echo base_url("profile/address") ?>'</script><?php
+                        }
                     }
                 }
             }

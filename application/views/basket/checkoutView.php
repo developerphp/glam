@@ -5,20 +5,22 @@
         
 <main>
 
-    <section>
-    	<form>
+    <section>    	
         <div class="container">
-        
+        <?php 
+        $sql=$this->db->query("select * from baskets where member_id=".$this->session->userdata('userid')." and section=1");
+        if ($sql->num_rows()==0) {
+            echo '<br/><br/><br/><h1 align="center">Sepetiniz Boş</h1>';
+        }
+        else {
+        ?>
+        <form>
 			<div class="row order_row">
             
                     <div class="col-md-12 order_list">
                     
-                        <div class="col-md-2 col-sm-2 col-xs-2">
+                        <div class="col-md-4 col-sm-4 col-xs-4">
                             <div class="order_item">ÜRÜN</div>
-                        </div>
-                        
-                        <div class="col-md-2 col-sm-2 col-xs-2">
-                            <div class="order_item">ÇEŞİT</div>
                         </div>
                         
                         <div class="col-md-1 col-sm-1 col-xs-1">
@@ -26,7 +28,7 @@
                         </div>
                         
                         <div class="col-md-1 col-sm-1 col-xs-1">
-                            <div class="order_item">ADET</div>
+                            <div class="order_item">KİŞİ</div>
                         </div>
                         
                         <div class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1">
@@ -40,35 +42,33 @@
                     </div>
                     
                     <div class="order_list_item">
-                        <div class="col-md-12 order_list" style="padding: 20px 0 20px 0;">
-                            
-                            <div class="col-md-2 col-sm-2 col-xs-2">
-                                <div class="order_item"><img src="assets/images/order_bottles.png" alt="purchase"></div>
-                            </div>
-                            
-                            <div class="col-md-2 col-sm-2 col-xs-2">
-                                <div class="order_item">Detox</div>
+                        <?php foreach($sql->result() as $basket) { ?>
+                        <div class="col-md-12 order_list" style="padding: 20px 0 20px 0;">                            
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <div class="order_item"><?php echo $basket->category_name.' - '.$basket->product_name ?></div>
+                                <em><?php echo $basket->delivery_date_view ?></em>
                             </div>
                             
                             <div class="col-md-1 col-sm-1 col-xs-1">
-                                <div class="order_item"><div class="order_count">7</div></div>
+                                <div class="order_item"><div class="order_count"><?php echo $basket->count_day ?></div></div>
                             </div>
                             
                             <div class="col-md-1 col-sm-1 col-xs-1">
-                                <div class="order_item"><div class="order_count">2</div></div>
+                                <div class="order_item"><div class="order_count"><?php echo $basket->count_person ?></div></div>
                             </div>
                             
                             <div class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1">
-                                <div class="order_item order_num">190 TL</div>
+                                <div class="order_item order_num"><?php echo $basket->price*1 ?> TL</div>
                             </div>
                             
                             <div class="col-md-2 col-sm-2 col-xs-2">
-                                <div class="order_item order_num"><strong>380 TL</strong></div>
+                                <div class="order_item order_num"><strong><?php echo ($basket->price*$basket->count_day)*$basket->count_person ?> TL</strong></div>
                             </div>
                             
-                            <div class="col-md-1 col-sm-1 col-xs-1"><div class="cancel_order"></div></div>
+                            <div class="col-md-1 col-sm-1 col-xs-1"><a class="cancel_order adress_remove" href="<?php echo base_url('basket/delete/'.$basket->id) ?>"></a></div>
                             
-                        </div> 
+                        </div>
+                        <?php }?> 
                         
                         
                     </div>
@@ -115,7 +115,9 @@
                     <input class="login_button" type="submit" name="submit" value="DEVAM" />
                  </div>
              </div>
-        	</form>
+         </form>
+         <?php }?>
+         </div>    	
     </section>
 </main>
 

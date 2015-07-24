@@ -6,9 +6,9 @@
 <div class="container">    
 
     <div class="order_title"> SİPARİŞ PLANLAMA </div>
-      <form id="orderplanForm" name="orderplanForm" onsubmit="submitform('orderplan','orderplanForm'); return false;">
+      <form id="orderplanForm" name="orderplanForm" onsubmit="submitform('basket','orderplanForm'); return false;">
         <div class="order_pickup"> <span class="title">Pick-Up</span> <span>
-          <input class="check" type="checkbox" name="myself" value="myself">
+          <input class="check" type="checkbox" name="ben_alicam" id="ben_alicam" />
           Ürünü ben gelip alacağım.(Pick-up zamanımız 18.00 - 18.30 arasıdır.) </span> </div>
         <div class="order_pickup"> <span class="title">Teslimat Günü</span> </div>
         <div id="calendar"></div>
@@ -19,7 +19,7 @@
             <div class="row">
               <div class="col-md-6 col-sm-6"> <span class="title">Kaç Kişilik</span>
                 <div class="select_box">
-                  <select name="person">
+                  <select name="count_person">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -29,7 +29,7 @@
               </div>
               <div class="col-md-6 col-sm-6"> <span class="title">Kaç Günlük</span>
                 <div class="select_box">
-                  <select name="person">
+                  <select name="count_day">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -39,16 +39,18 @@
             </div>
             <div class="row">
               <div class="col-md-6 col-sm-6"> <span class="title">Teslimat Tarihi</span>
-                <div class="select_box">
-                  <select name="date">
-                    <option>Teslimat Tarihi</option>
-                  </select>
+                <div class="input_box">
+                    <input type="text" name="cleanse_date_view" id="cleanse_date_view" />
+                    <input type="hidden" name="cleanse_date" id="cleanse_date" />
                 </div>
               </div>
-              <div class="col-md-6 col-sm-6"> <span class="title">Teslimat Zamanı</span>
+              <div class="col-md-6 col-sm-6" id="saatsec"> <span class="title">Teslimat Zamanı</span>
                 <div class="select_box">
-                  <select name="time">
-                    <option>Teslimat Zamanı</option>
+                  <select name="teslimat_saati">
+                    <option value="">Seçiniz</option>
+                    <option>09:30 - 10:30</option>
+                    <option>13:00 - 15:00</option>
+                    <option>18:00 - 20:00</option>
                   </select>
                 </div>
               </div>
@@ -57,17 +59,31 @@
               <div class="col-md-6 col-sm-6"> <span class="title">Teslimat Adresi</span>
                 <div class="select_box">
                   <select name="address1">
-                    <option>EV</option>
+                    <option value="">Adres Seçiniz</option>
+                    <?php 
+                    $sql=$this->db->query("select * from address where user_id=".$this->db->escape($basket->member_id)." order by id asc");
+                    foreach($sql->result() as $adres) {
+                    ?>
+                    <option value="<?php echo $adres->id ?>"><?php echo $adres->address_title ?></option>                    
+                    <?php }?>
                   </select>
-                  <a href="">+ Adres Ekle</a>
+                  <?php 
+                  $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                  ?>
+                  <a href="<?php echo base_url('profile/addAddress/?url='.$actual_link) ?>">+ Adres Ekle</a>
                 </div>
               </div>
               <div class="col-md-6 col-sm-6"> <span class="title">Fatura Adresi</span>
                 <div class="select_box">
                   <select name="address2">
-                    <option>EV</option>
+                    <option value="<?php echo $adres->id ?>">Adres Seçiniz</option>
+                    <?php 
+                    $sql=$this->db->query("select * from address where user_id=".$this->db->escape($basket->member_id)." order by id asc");
+                    foreach($sql->result() as $adres) { ?>
+                    <option value="<?php echo $adres->id ?>"><?php echo $adres->address_title ?></option>                    
+                    <?php }?>
                   </select>
-                  <a href="">+ Adres Ekle</a>
+                  <a href="<?php echo base_url('profile/addAddress/?url='.$actual_link) ?>">+ Adres Ekle</a>
                 </div>
               </div>
             </div>
@@ -75,6 +91,9 @@
             <div id="orderplanForm_back" class="alerts_box"></div>
           </div>
         </div>
+        <input id="month" type="hidden" />
+        <input id="year" type="hidden" />
+        <input type="hidden" name="basket_id" value="<?php echo $basket->id ?>" />
       </form>
     </div>
 
@@ -94,7 +113,20 @@
     var pid=<?php echo $basket->id ?>
 
     $(document).ready(function(){
-        loadcalendar(pid,month,year,doprev);        
+        loadcalendar(pid,month,year,doprev);    
+
+        $('#ben_alicam').click(function () {
+            if (this.checked==true) {
+                $("#saatsec").slideUp(500);
+                $('#saatsec select').val('');
+                ben_alicam=1;
+            }            
+            else {
+                $("#saatsec").slideDown(500);
+                ben_alicam=0;
+            }
+        });
+
     });    
 
     function loadcalendar(pid,month,year,doprev) {
@@ -165,6 +197,45 @@
         $('#cleanse_date').val('');
         $('#cleanse_date_view').val('');        
     }   
+
+    function tarihsec(tarih,gun,sectigigun) { 
+        
+        //if ((sectigigun==3)||(sectigigun==6)) {
+            if (ben_alicam==0) {
+                $('#pickup_div').slideUp(250);
+                $('#ben_alicam').attr('checked',false);
+                $("#saatsec").slideDown(500);
+            }
+            else {
+                alert('Seçmiş olduğunuz günde pick up yapamazsınız');
+                return false;
+            }
+        // }
+        // else {
+        //     $('#pickup_div').slideDown(250);            
+        // }
+        
+        var tarihayir=tarih.split("-");
+        var gunu=tarihayir[2];            
+        
+        $('#month').val(parseInt(tarihayir[1],10));
+        $('#year').val(tarihayir[0]);
+        var t= new Date(tarihayir[1]+'/'+tarihayir[2]+'/'+tarihayir[0]);
+        //                if (gun<=3) {
+        $('.day').removeClass('selected');
+        $('#day'+tarihayir[2]).addClass('selected');
+        for (i=1;i<=gun;i++) {
+            saygun=parseInt(gunu)+parseInt(i-1,10);                                    
+//            $('#day'+saygun).addClass('selected');
+            $('#teslim_gun').html(tarihayir[2]+' '+aylar[parseInt(tarihayir[1],10)-1]+' '+tarihayir[0]+' '+weekday[parseInt(t.getDay(),10)]);
+            $('#cleanse_date_view').val(tarihayir[2]+' '+aylar[parseInt(tarihayir[1],10)-1]+' '+tarihayir[0]+' '+weekday[parseInt(t.getDay(),10)]);
+        }
+        $('#cleanse_date').val(tarih);
+    }
+            
+    function no_day() {
+        alert('Bu tarihte teslimat yapamıyoruz.');
+    }    
 </script>
 
 </body>

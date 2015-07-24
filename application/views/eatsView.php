@@ -42,7 +42,6 @@
                       <div class="row">
                           <div class="col-md-12">
                             <a href="<?php echo base_url('eats/detail/'.$eat->id) ?>" class="detox_button">İNCELE</a>
-                            <div class="detox_button pull-right-xs">SATIN AL</div>
                           </div>
                       </div>
                       

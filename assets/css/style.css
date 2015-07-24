@@ -602,11 +602,12 @@ header .container-fluid {
 }
 
 .cancel_order {
-  background: url(../images/close.png);
-  width: 12px;
-  height: 13px;
-  margin-top: 23px;
+  background: url(../images/deleteIcon.png);
+  width: 20px;
+  height: 20px;
+  margin-top: 15px;
   cursor: pointer;
+  display: block;
 }
 
 .order_count {
@@ -1524,6 +1525,19 @@ footer {
   padding: 10px 0;
   text-align: center;
   font-size: 16px;
+}
+#calendar .item .day.enable:hover {
+  color: #fff;
+  background: #567151;
+  cursor: pointer;
+}
+#calendar .item .day.selected {
+  color: #fff;
+  background: #567151;
+}
+#calendar .item .day.disable {
+  background: #e74c3c;
+  color: #fff;
 }
 #calendar .item .day strong {
   display: block;

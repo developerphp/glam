@@ -11,13 +11,13 @@ class MY_Calendar {
 	var $day_type		= 'abr';
 	var $show_next_prev	= FALSE;
 	var $next_prev_url	= '';
-        var $yasaklar = '';
-        var $language = 1;        
-        var $gunler = array('Pzr','Pzt','Sal','Çar','Per','Cum','Cmt');
-        var $yasak_gunler = '';
-        var $kac_gunluk = 1;
-        var $product_id = 0;
-        var $zones=array();                
+    var $yasaklar = '';
+    var $language = 1;        
+    var $gunler = array('Pzr','Pzt','Sal','Çar','Per','Cum','Cmt');
+    var $yasak_gunler = '';
+    var $kac_gunluk = 1;
+    var $product_id = 0;
+    var $zones=array(1,2,3,4,5);                
 
 	/**
 	 * Constructor

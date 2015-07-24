@@ -103,11 +103,11 @@
                             </div>
                         </div>
                         <div id="addAddressForm_back" class="alerts_box"></div>
+                        <input type='text' name='url' value="<?php echo $this->input->get('url') ?>" />
                         <input class="login_button" type="submit" name="submit" value="KAYDET">
                         
                     </div>     
-                </div>
-                    
+                </div>                
             </form>
                 
             </div>

@@ -12,8 +12,9 @@
                         <li>INSTAGRAM</li>
                     </ul>
                 </div> 
-                
+                <a href="<?php echo base_url('basket') ?>">
                 <div class="header_shop"></div>
+                </a>
                 
                 <div class="header_profile">
                 <?php if ($login==1) { ?>

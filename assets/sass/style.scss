@@ -364,11 +364,12 @@ header{
 }
 
 .cancel_order{
-	background: url(../images/close.png);
-	width: 12px;
-	height: 13px;
-	margin-top: 23px;
+	background: url(../images/deleteIcon.png);
+	width: 20px;
+	height: 20px;
+	margin-top: 15px;
 	cursor: pointer;
+	display:block;
 }
 
 .order_count{
@@ -1328,6 +1329,21 @@ footer{
 			padding:10px 0;
 			text-align: center;		
 			font-size:16px;
+			&.enable {
+				&:hover {
+					color:#fff;
+					background:$c_green;
+					cursor: pointer;
+				}
+			}
+			&.selected {
+				color:#fff;
+				background:$c_green;
+			}
+			&.disable {
+				background:$c_red;
+				color:#fff;
+			}
 			strong {
 				display: block;
 				width:110px;
