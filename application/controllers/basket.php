@@ -15,6 +15,30 @@ class Basket extends CI_Controller {
         }
 	}
 
+    public function checkoutForm_do() {
+        $login=$this->session->userdata('login');
+        if ($login==1) {
+            $sql=$this->db->query("select * from baskets where member_id=".$this->session->userdata('userid')." and section=1");
+            if ($sql->num_rows()>0) {
+                $sozlesmekabul=$this->input->post('sozlesmekabul');
+                $kapidamiktar=$this->input->post('kapidamiktar');
+                $odemetipi=$this->input->post('odemetipi');
+                $kapidaodemetutar=$this->input->post('kapidaodemetutar');
+                $kargo=$this->input->post('kargo');
+                $xidsi=$this->input->post('xid');
+                $siparis_notu=$this->input->post('siparis_notu');
+                
+                $sql=$this->db->query("select * from baskets where member_id=".$this->session->userdata('userid')." and section=1");
+                foreach($sql->result() as $basket) {
+
+                }
+            }
+        }
+        else {
+            echo '<div class="alert_error">Lütfen üye girişi yapınız.</div>'; exit();    
+        }
+    }
+
 	public function add($id)
 	{            
         $login=$this->session->userdata('login');
@@ -37,7 +61,7 @@ class Basket extends CI_Controller {
     				);
         			if ($this->db->insert('baskets',$datas)) {
         				echo "<script>parent.location.href='".base_url('basket/calendar/'.$this->db->insert_id())."'</script>";
-        			}        			
+        			}
         		}
         	}
         }
@@ -45,6 +69,49 @@ class Basket extends CI_Controller {
         	echo '<script>alert("Lütfen üye girişi yapınız")</script>';
         }
 	}
+
+    public function createCleanseForm_do() {
+        $login=$this->session->userdata('login');
+        if ($login==1) {
+            $bottle=$this->input->post('bottle');
+
+            if (!count($bottle)==6) {
+                echo '<div class="alert_error">6 adet şişe seçebilirsiniz</div>'; exit();    
+            }
+
+            $titles=array();
+
+            foreach($bottle as $b) {
+                if (is_numeric($b)) {
+                    $sql=$this->db->query("select 
+                    products.id, products.title, products.price , products.ingredients, 
+                    product_categories.id as cid , product_categories.title as category_name
+                    from products,product_categories where products.id=".$this->db->escape($b)." and products.maincat=product_categories.id");
+                    foreach($sql->result() as $product) {
+                        array_push($titles, $product->title);
+                    }
+                }
+            }
+
+            $datas=array(
+                'member_id'=>$this->session->userdata('userid'),
+                'category_id'=>0,
+                'product_id'=>0,
+                'category_name'=>'6 LI KUTU',
+                'product_name'=>implode(',',$titles),
+                'ingredients'=>implode(',',$bottle),
+                'price'=>100,
+                'created_at'=>date('Y-m-d H:i:s')
+            );
+            if ($this->db->insert('baskets',$datas)) {
+                echo "<script>parent.location.href='".base_url('basket/calendar/'.$this->db->insert_id())."'</script>";
+            }
+
+        }
+        else {
+            echo '<div class="alert_error">Lütfen üye girişi yapınız.</div>'; exit();    
+        }
+    }
 
 	public function calendar($id="") {
 		$login=$this->session->userdata('login');
