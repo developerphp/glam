@@ -569,8 +569,8 @@ text-align: center;
 		border: 0px solid #fff;
 		width: 65px;
 		height: 107px;
-		margin-right: 7.5px;
-		margin-left: 7.5px;
+		margin-right: 6px;
+		margin-left: 9px;
 		padding: 0;
 		.bottle_desc {
 			font-size: 12px;
@@ -696,12 +696,11 @@ text-align: center;
 	.desc{
 		text-align: center;
 		font-size: 14px;
-		@include sm{
-			margin-bottom: 30px;
-		}
-		@include xs{
-			margin-bottom: 30px;
-		}		
+		margin-bottom: 30px;		
+	}
+
+	.h1{
+		margin-top: 50px !important;
 	}
 }
 
@@ -958,7 +957,7 @@ footer{
 
 .detox_desc_long{
 	font-size: 14px;
-	margin: 100px 0px 0px 0px;
+	margin-top: 100px;
 	@include xs{
 		margin: 50px 0px 0px 0px;
 	}

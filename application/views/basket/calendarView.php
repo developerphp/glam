@@ -39,10 +39,8 @@
             </div>
             <div class="row">
               <div class="col-md-6 col-sm-6"> <span class="title">Teslimat Tarihi</span>
-                <div class="input_box">
-                    <input type="text" name="cleanse_date_view" id="cleanse_date_view" />
-                    <input type="hidden" name="cleanse_date" id="cleanse_date" />
-                </div>
+              	<input class="input_box" type="text" name="cleanse_date_view" id="cleanse_date_view" disabled="disabled" />
+              	<input type="hidden" name="cleanse_date" id="cleanse_date" />
               </div>
               <div class="col-md-6 col-sm-6" id="saatsec"> <span class="title">Teslimat Zamanı</span>
                 <div class="select_box">

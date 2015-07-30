@@ -49,12 +49,8 @@
                             <input class="input_box" type="email" name="email" placeholder="E Posta" value="<?php echo $profile->email ?>" />
                       </div>
                         
-                      <div class="col-md-2 col-sm-2">   
-                        <input class="input_box" type="tel" name="phoneAreaCode" placeholder="Alan Kodu" maxlength="3" value="<?php echo $profile->phone_area ?>" />
-                      </div>
-                        
-                      <div class="col-md-4 col-sm-4">   
-                          <input class="input_box" type="tel" name="phone" placeholder="Telefon" maxlength="7" value="<?php echo $profile->phone ?>" />
+                      <div class="col-md-6 col-sm-6">   
+                          <input class="input_box" type="tel" name="phone" placeholder="Telefon" value="<?php echo $profile->phone ?>" />
                       </div>
                     </div>
                     <div class="input_title change_pass"><a href="<?php echo base_url('profile/changePassword') ?>">Şifreni Değiştir</a></div>
