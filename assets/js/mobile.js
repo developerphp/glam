@@ -1,6 +1,5 @@
 var isMobile = window.matchMedia("only screen and (max-width: 767px)");
 
-
 $( document ).ready(function() {
 	
 	var $puthere = $('.swap').closest( '.row' );
@@ -38,15 +37,22 @@ $( window ).resize(function() {
 	
 		$('.swap').remove().clone().prependTo( $puthere );	
 	
-		$('.menu_container').remove().clone().prependTo( document.body );	
-			
+		$('.menu_container').remove().clone().prependTo( document.body );
+
+		$('.menu_container').css("display","none");
+		$( 'html' ).css( "overflow", "auto");
+		$( 'body' ).css( "width", "auto");
 	}
 	
 	else{
 		
 		$('.swap').remove().clone().appendTo( $puthere );
 		
-		$('.menu_container').remove().clone().appendTo( 'header' );	
+		$('.menu_container').remove().clone().appendTo( 'header' );
+
+		$('.menu_container').css("display","block");
+		$( 'html' ).css( "overflow", "auto");
+		$( 'body' ).css( "width", "auto");
 	}
 	
 });

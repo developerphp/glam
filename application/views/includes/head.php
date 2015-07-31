@@ -27,9 +27,10 @@
 $( document ).ready( function() {
 	
 	$('.login_button').click( function() {
-		$('.alerts_box').slideDown( function(){
-			$('.alerts_box').delay( 3000 ).slideUp();
-		});
+		if( $('.alerts_box').css("display") == "none" ){
+			$('.alerts_box').delay( 300 ).slideDown();
+			$('.alerts_box').delay(3000).slideUp();
+		}
 	});	
 });
 </script>

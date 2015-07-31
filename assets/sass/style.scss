@@ -26,10 +26,14 @@ body{
 	font-family: $f_osans ;
 	font-weight: 300;
 	color: $c_black ;
-	margin-top: 225px;
+	margin-top: 219px;
 	@include xs{
 		margin-top: 118px;
 	}
+}
+
+main{
+	min-height: 500px;
 }
 
 .img-responsive{
@@ -77,7 +81,7 @@ header{
 	position: fixed;
 	width:100%;
 	z-index: 10;
-	margin-top: -225px;
+	margin-top: -219px;
 	@include xs{
 		margin-top: -118px;
 	}
@@ -238,9 +242,19 @@ header{
 }
 
 .main_menu{
-	display: table;
-	margin: 13px auto;
+
+	text-align: center;
+
+	@include md{
+		display: block;
+	}
+
+	@include sm{
+		display: block;
+	}
+
 	@include xs{
+		display: table;
  	  margin: auto;
  	  position: absolute;
 	  left: 0;
@@ -252,8 +266,9 @@ header{
 	}
 
 	a{
+		display: inline-block;
 		font-size: 14px !important;
-		margin: 20px;
+		margin: 10px 20px 10px 20px;
 		font-weight: 600;
 		text-align: center;
 		position: relative;
@@ -274,6 +289,9 @@ header{
 			-webkit-transform: translateY(10px);
 			-moz-transform: translateY(10px);
 			transform: translateY(10px);
+			@include xs{
+				display: none;
+			}
 		}
 
 		@include xs{
@@ -286,15 +304,11 @@ header{
  			-moz-transform: translateY(3px);
   			transform: translateY(3px);
 		}
-			
-		@include sm{
-			margin: 11px;
-		}
 
 		@include xs{
 			font-size: 40px !important;
 			display: block;
-  			margin: 30px;
+  			margin: 40px auto;
 		}
 	}
 }
@@ -807,7 +821,10 @@ footer{
 	margin-top: 40px;
 	a{
 		text-align:center;
-		padding: 0px 5px 0px 5px;	
+		padding: 0px 7px 0px 7px;
+		img{
+			height: 20px;
+		}	
 	}	
 }
 

@@ -1,27 +1,18 @@
 $( document ).ready(function() {
 	
 	var added = 0;
-	var alert1 = 0;
 	
 //***START OF A BOTTLE***	
 
 //add bottle
 	$(".bottle").click(function() {
+		
 //if more than 5 bottles warn me and kill this
 		if(added>5) {
-			
-			if(alert1===0) {
-				alert1 = 1;
-				$('#alert_box').slideDown();
-				$('#alert_box').delay(1500).slideUp(function(){
-					alert1 = 0;
-				});
+			if( $('.alerts_box').css("display") == "none" ){
+				$('.alerts_box').slideDown();
+				$('.alerts_box').delay(3000).slideUp();
 			}
-			
-			else {
-				return false;
-			}
-			
 			return false;
 		}
 		
@@ -29,14 +20,9 @@ $( document ).ready(function() {
 			added = added+1;
 			
 			var $addthis = $( this ).clone().css( "opacity", "0" );
-			$addthis.appendTo("#bottles form").animate({ opacity: "1" });
+			$addthis.appendTo("#bottles").animate({ opacity: "1" });
 
-			$addthis.find('.remove_button').delay(400).animate({ opacity: "1" });
-			
-			//setTimeout(function(){
-//				$addthis.find('.remove_button').css("opacity", "0");
-//				$addthis.find('.remove_button').css("opacity", "1");
-//			},1500);
+			$addthis.find('.remove_button').delay(600).animate({ opacity: "1" });
 			 
 			//add button tick
 			$(this).find('.add_button').css("background", "url(assets/images/added.png)");

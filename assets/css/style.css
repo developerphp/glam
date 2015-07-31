@@ -267,13 +267,17 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   color: #231f20;
-  margin-top: 225px;
+  margin-top: 219px;
 }
 
 @media only screen and (max-width: 767px) {
   body {
     margin-top: 118px;
   }
+}
+
+main {
+  min-height: 500px;
 }
 
 .img-responsive {
@@ -319,7 +323,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 10;
-  margin-top: -225px;
+  margin-top: -219px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -501,12 +505,24 @@ header .container-fluid {
 }
 
 .main_menu {
-  display: table;
-  margin: 13px auto;
+  text-align: center;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .main_menu {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .main_menu {
+    display: block;
+  }
 }
 
 @media only screen and (max-width: 767px) {
   .main_menu {
+    display: table;
     margin: auto;
     position: absolute;
     left: 0;
@@ -519,8 +535,9 @@ header .container-fluid {
 }
 
 .main_menu a {
+  display: inline-block;
   font-size: 14px !important;
-  margin: 20px;
+  margin: 10px 20px 10px 20px;
   font-weight: 600;
   text-align: center;
   position: relative;
@@ -545,6 +562,12 @@ header .container-fluid {
 }
 
 @media only screen and (max-width: 767px) {
+  .main_menu a:after {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
   .main_menu a {
     color: #fff !important;
   }
@@ -557,17 +580,11 @@ header .container-fluid {
   transform: translateY(3px);
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .main_menu a {
-    margin: 11px;
-  }
-}
-
 @media only screen and (max-width: 767px) {
   .main_menu a {
     font-size: 40px !important;
     display: block;
-    margin: 30px;
+    margin: 40px auto;
   }
 }
 
@@ -1090,7 +1107,11 @@ footer {
 
 .footer_social a {
   text-align: center;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 7px 0px 7px;
+}
+
+.footer_social a img {
+  height: 20px;
 }
 
 .newsletter .box {

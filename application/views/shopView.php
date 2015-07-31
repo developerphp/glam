@@ -6,8 +6,8 @@
 <body>
 <?php $this->load->view('includes/header') ?>
   
-  <div id="alert_box">
-  	<div id="alert1" class="alert alert-danger" align="center" role="alert">En fazla 6 adet ekleyebilirsiniz.</div>
+  <div class="alerts_box">
+  	<div class="alert_error">En fazla 6 adet ekleyebilirsiniz.</div>
   </div>
 
   <div class="bottles_fixed">

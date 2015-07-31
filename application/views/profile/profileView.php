@@ -2,6 +2,9 @@
 </head>
 <body>
 <?php $this->load->view('includes/header') ?>
+
+<div id="profileForm_back" class="alerts_box"></div>
+
  <main>
   <section>
   
@@ -55,7 +58,7 @@
                     </div>
                     <div class="input_title change_pass"><a href="<?php echo base_url('profile/changePassword') ?>">Şifreni Değiştir</a></div>
                     <input class="login_button" type="submit" name="submit" value="KAYDET" />
-                    <div id="profileForm_back" class="alerts_box"></div>
+                    
                     </div>     
                 </div>
                 
