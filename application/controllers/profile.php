@@ -285,7 +285,6 @@ class Profile extends CI_Controller {
 
                     $name=$this->input->post('name');
                     $surname=$this->input->post('surname');
-                    $phoneAreaCode=$this->input->post('phoneAreaCode');
                     $phone=$this->input->post('phone');
                     $email=$this->input->post('email');
 
@@ -297,7 +296,6 @@ class Profile extends CI_Controller {
                     $this->form_validation->set_rules('name','Ad','required|min_length[2]|max_length[50]|xss_clean');
                     $this->form_validation->set_rules('surname','Soyad','required|min_length[2]|max_length[50]|xss_clean');
                     $this->form_validation->set_rules('email', 'Email', 'required|valid_email|xss_clean');                    
-                    $this->form_validation->set_rules('phoneAreaCode','Alan Kodu','required|min_length[3]|max_length[3]|xss_clean|numeric');
                     $this->form_validation->set_rules('phone','Telefon','required|min_length[7]|max_length[7]|xss_clean|numeric');
                     $this->form_validation->set_message('required', '- %s '.' alanlarının doldurulması zorunludur');  
                     $this->form_validation->set_error_delimiters('<div class="alert_error">', '</div>');
@@ -312,7 +310,6 @@ class Profile extends CI_Controller {
                                         'email'=>$email,
                                         'name'=>$this->db->escape_like_str($name),
                                         'surname'=>$this->db->escape_like_str($surname),
-                                        'phone_area'=>$this->db->escape_like_str($phoneAreaCode),
                                         'phone'=>$this->db->escape_like_str($phone)
                                     );
                                     

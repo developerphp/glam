@@ -67,7 +67,7 @@
                          </div>
                             
                             <div class="col-md-6 col-sm-6">   
-                                <input class="input_box" type="tel" name="phone" placeholder="Telefon" value="<?php echo $profile->phone ?>" />
+                                <input class="input_box" type="tel" name="phone" placeholder="Telefon" />
                             </div>
                         </div>
                         

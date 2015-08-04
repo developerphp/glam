@@ -22,7 +22,6 @@
                           <div class="be4 bottle_empty"><img src="assets/images/bottle_empty.png" /></div>
                           <div class="be5 bottle_empty"><img src="assets/images/bottle_empty.png" /></div>
                           <div class="be6 bottle_empty"><img src="assets/images/bottle_empty.png" /></div>
-                           
                           <input type="submit" class="bottle_purchase" value="SATIN AL" onclick="submitform('basket','createCleanseForm')"> 
                       </form>             
                   </div>

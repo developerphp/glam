@@ -150,7 +150,6 @@ class Register extends CI_Controller {
                     $email=$this->input->post('email');
                     $password=$this->input->post('password');
                     $rpassword=$this->input->post('passwordRepeat');
-                    $phoneAreaCode=$this->input->post('phoneAreaCode');
                     $phone=$this->input->post('phone');
 
                     $error=0;
@@ -165,7 +164,6 @@ class Register extends CI_Controller {
                     //$this->form_validation->set_rules('registerusername', '', 'trim|required|min_length[6]|max_length[50]|xss_clean|callback_valid_username');  
                     $this->form_validation->set_rules('password', "Şifre", 'required|trim|min_length[6]|max_length[50]|xss_clean|matches[password_repeat]|md5');
                     $this->form_validation->set_rules('rpassword', "Şifre Tekrar", 'trim');
-                    $this->form_validation->set_rules('phoneAreaCode','Alan Kodu','required|min_length[3]|max_length[3]|xss_clean|numeric');
                     $this->form_validation->set_rules('phone','Telefon','required|min_length[7]|max_length[7]|xss_clean|numeric');
                     $this->form_validation->set_message('required', '- %s '.' alanlarının doldurulması zorunludur');  
                     $this->form_validation->set_error_delimiters('<div class="alert_error">', '</div>');
@@ -185,7 +183,6 @@ class Register extends CI_Controller {
                                         'email'=>$email,
                                         'name'=>$this->db->escape_like_str($name),
                                         'surname'=>$this->db->escape_like_str($surname),
-                                        'phone_area'=>$this->db->escape_like_str($phoneAreaCode),
                                         'phone'=>$this->db->escape_like_str($phone),
                                         'password'=>$this->db->escape_like_str(md5($password)),
                                         'approval_code'=>$this->db->escape_like_str($onaykodu),

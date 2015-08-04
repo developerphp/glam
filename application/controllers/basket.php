@@ -81,6 +81,9 @@ class Basket extends CI_Controller {
 
             $titles=array();
 
+            echo $bottle;
+            exit();
+
             foreach($bottle as $b) {
                 if (is_numeric($b)) {
                     $sql=$this->db->query("select 
