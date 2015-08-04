@@ -970,6 +970,10 @@ header .container-fluid {
   background: #6f886a;
 }
 
+.purchase_b {
+  display: none;
+}
+
 .h1 {
   font-weight: 300 !important;
   text-align: center;

@@ -28,7 +28,7 @@
 <script type="text/javascript">
 $( document ).ready( function() {
 	
-	$('.login_button').click( function() {
+	$('.login_button, .bottle_purchase').click( function() {
 		if( $('.alerts_box').css("display") == "none" ){
 			$('.alerts_box').delay( 300 ).slideDown();
 			$('.alerts_box').delay(3000).slideUp();

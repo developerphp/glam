@@ -9,9 +9,13 @@ $( document ).ready(function() {
 		
 //if more than 5 bottles warn me and kill this
 		if(added>5) {
-			if( $('.alerts_box').css("display") == "none" ){
+			if( $('.alerts_box').css("display") === "none" ){
+				$('.purchase_b').css('display','block');
 				$('.alerts_box').slideDown();
-				$('.alerts_box').delay(3000).slideUp();
+				$('.alerts_box').delay(3000).slideUp( function(){
+					$('.purchase_b').css('display','none');
+				});
+				
 			}
 			return false;
 		}

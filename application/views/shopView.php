@@ -7,7 +7,7 @@
 <?php $this->load->view('includes/header') ?>
   
   <div class="alerts_box">
-  	<div class="alert_error">En fazla 6 adet ekleyebilirsiniz.</div>
+  	<div class="alert_error purchase_b">En fazla 6 adet ekleyebilirsiniz.</div>
   </div>
 
   <div class="bottles_fixed">
@@ -25,7 +25,7 @@
                           <input type="submit" class="bottle_purchase" value="SATIN AL" onclick="submitform('basket','createCleanseForm')"> 
                       </form>             
                   </div>
-                  <div id="createCleanseForm_back"></div>
+                  <div class="alerts_box" id="createCleanseForm_back"></div>
             </div>
         </div>
     </div>
