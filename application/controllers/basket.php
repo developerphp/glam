@@ -75,14 +75,13 @@ class Basket extends CI_Controller {
         if ($login==1) {
             $bottle=$this->input->post('bottle');
 
-            if (!count($bottle)==6) {
+
+            if (count($bottle)<>6) {
                 echo '<div class="alert_error">6 adet şişe seçebilirsiniz</div>'; exit();    
             }
 
             $titles=array();
 
-            echo $bottle;
-            exit();
 
             foreach($bottle as $b) {
                 if (is_numeric($b)) {
