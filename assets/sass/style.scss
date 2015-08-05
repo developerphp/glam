@@ -313,6 +313,14 @@ header{
 	color: $c_green !important;
 
 	&:after{
+	  top: -webkit-calc(100% + 3px) !important;
+	  -webkit-background: #567151 !important;
+	  -webkit-opacity: 1 !important;
+	  -webkit-transform: none !important;
+	  top: -moz-calc(100% + 3px) !important;
+	  -moz-background: #567151 !important;
+	  -moz-opacity: 1 !important;
+	  -moz-transform: none !important;
 	  top: calc(100% + 3px) !important;
 	  background: #567151 !important;
 	  opacity: 1 !important;
