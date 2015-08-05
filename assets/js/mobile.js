@@ -15,14 +15,14 @@ $( document ).ready(function() {
 	$('#m_menu').click( function() {
 	
 		$('.menu_container').fadeIn();
-		$( 'html' ).css( "overflow", "hidden");
+		$( 'html' ).css( "overflow-y", "hidden");
 		$( 'body' ).css( "width", "100%");
 	});
 	
 	$( document ).on('click', '#m_close', function() {
 	
 		$('.menu_container').fadeOut();
-		$( 'html' ).css( "overflow", "auto");
+		$( 'html' ).css( "overflow-y", "auto");
 		$( 'body' ).css( "width", "auto");
 	});
 

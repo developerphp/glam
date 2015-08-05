@@ -39,23 +39,19 @@
             
                     <div class="col-md-9 col-sm-10 col-xs-11 col-md-offset-1 order_list">
                     
-                        <div class="col-md-2 col-sm-2 col-xs-2">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                             <div class="order_item">ÜRÜN</div>
                         </div>
                         
-                        <div class="col-md-3 col-sm-3 col-xs-3">
-                            <div class="order_item">ÇEŞİT</div>
-                        </div>
-                        
-                        <div class="col-md-2 col-sm-2 col-xs-2 col-md-offset-1">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                             <div class="order_item">ADET</div>
                         </div>
                         
-                        <div class="col-md-2 col-sm-2 col-xs-2">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                             <div class="order_item">FİYAT</div>
                         </div>
                         
-                        <div class="col-md-2 col-sm-2 col-xs-2">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                             <div class="order_item">TOTAL</div>
                         </div>
                         
@@ -64,29 +60,25 @@
                     <div class="order_list_item">
                         <div class="col-md-9 col-sm-10 col-xs-11 col-md-offset-1 order_list">
                             
-                            <div class="col-md-2 col-sm-2 col-xs-2">
-                                <div class="order_item"><img src="<?php echo base_url('assets/images/order_bottles.png') ?>" alt="purchase"></div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="order_item txt">DETOX</div>
                             </div>
                             
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                <div class="order_item">Detox / Smoothies / Breakfast / 7 Day</div>
-                            </div>
-                            
-                            <div class="col-md-2 col-md-offset-1 col-sm-2 col-xs-2">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                 <div class="order_item"><div class="order_count">2</div></div>
                             </div>
                             
-                            <div class="col-md-2 col-sm-2 col-xs-2">
-                                <div class="order_item order_num">190 TL</div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="order_item txt">190 TL</div>
                             </div>
                             
-                            <div class="col-md-2 col-sm-2 col-xs-2">
-                                <div class="order_item order_num"><strong>380 TL</strong></div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <div class="order_item txt"><strong>380 TL</strong></div>
                             </div>
                             
                         </div> 
                         
-                        <div class="col-md-1 col-sm-1 col-xs-1"><div class="re_order"></div></div>
+                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 re_order_abs"><div class="re_order"></div></div>
                     </div>
                       
                 

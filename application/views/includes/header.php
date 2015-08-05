@@ -18,15 +18,13 @@
                 
                 <div class="header_profile">
                 <?php if ($login==1) { ?>
-                <span><?php echo $this->session->userdata('name').' '.$this->session->userdata('surname') ?></span>
+                <a href="<?php echo base_url('profile/edit') ?>"><span><?php echo $this->session->userdata('name').' '.$this->session->userdata('surname') ?></span></a>
                 
                     <nav class="h_profile_menu">
-                    	<ul>
-                           <li><a href="<?php echo base_url('profile/edit') ?>">Üyelik Bilgileri</a></li>
-                           <li><a href="<?php echo base_url('profile/address') ?>">Adres Defteri</a></li>
-                           <li><a href="<?php echo base_url('profile/orders') ?>">Sipraişlerim</a></li>
-                           <li><a href="<?php echo base_url('register/logout') ?>">Çıkış Yap</a></li>
-                       </ul>
+                    	<a href="<?php echo base_url('profile/edit') ?>">Üyelik Bilgileri</a>
+                     	<a href="<?php echo base_url('profile/address') ?>">Adres Defteri</a>
+                    	<a href="<?php echo base_url('profile/orders') ?>">Sipraişlerim</a>
+                   		<a href="<?php echo base_url('register/logout') ?>">Çıkış Yap</a>
                     </nav>
                     
                 <?php } else {?>
@@ -38,7 +36,7 @@
         </div>  
     </div>   
 
-<div class="logo"></div>
+<a href="<?php echo base_url() ?>"><div class="logo"></div></a>
 
 <div class="menu_container">
 
