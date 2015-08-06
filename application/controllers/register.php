@@ -76,7 +76,7 @@ class Register extends CI_Controller {
                 {                    
                     $sql=$this->db->query("select * from users where email='".$email."' limit 0,1");
                     if ($sql->num_rows()==0) {
-                        echo 'Bu bilgilerle kayıtlı bir üyemiz bulunmamaktadır';
+                        echo '<div class="alert_error">Bu bilgilerle kayıtlı bir üyemiz bulunmamaktadır</div>';
                         ?>
                         <script>
                         $('input[name=email] , input[name=password]').addClass('error_input');
