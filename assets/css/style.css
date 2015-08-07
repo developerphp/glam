@@ -1019,6 +1019,9 @@ header .container-fluid {
 
 .purchase_b {
   display: none;
+  background-color: #e74c3c;
+  width: 100%;
+  padding: 10.5px 0 10.5px 0;
 }
 
 .h1 {
@@ -1391,9 +1394,17 @@ footer {
   width: 100%;
   position: relative;
   height: 300px;
-  background: url(../images/l_cover.png);
+  background: url(../images/l_cover.jpg);
   background-size: cover;
   background-position: center;
+}
+
+.login_cover .wrapper {
+  opacity: 0;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
 }
 
 .login_row {
@@ -1410,23 +1421,38 @@ footer {
 .l_cover_txt {
   text-align: center;
   color: #fff;
-  font-weight: 500;
-  font-size: 30px;
-  position: absolute;
-  width: 100%;
-  height: 38px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  width: 250px;
+  padding: 10px 0px;
   margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  border: 2px solid #fff;
+  letter-spacing: 1px;
 }
 
-@media only screen and (max-width: 767px) {
-  .l_cover_txt {
-    font-size: 25px;
-    height: 35px;
-  }
+.l_cover_title {
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.l_cover_line {
+  width: 25px;
+  height: 2px;
+  background: #567151;
+  margin: 20px auto;
+}
+
+.l_cover_img {
+  background: url(../images/cover_arrow.png);
+  width: 26px;
+  height: 26px;
+  margin: 20px auto;
+  margin-bottom: 0;
 }
 
 #cover_txt {

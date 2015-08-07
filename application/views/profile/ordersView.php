@@ -9,7 +9,12 @@
     	<div class="row">
             <div class="login_cover">
                 <div class="tint"></div>
-                <div class="l_cover_txt">SİPARİŞLERİM</div>
+                <div class="wrapper">
+                    <div class="l_cover_title">SİPARİŞLERİM</div>
+                    <div class="l_cover_line"></div>
+                    <div class="l_cover_txt">HESABIM</div>
+                    <div class="l_cover_img"></div>
+                </div>
             </div>
           </div> 
 	</div>

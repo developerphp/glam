@@ -27,13 +27,22 @@
 
 <script type="text/javascript">
 $( document ).ready( function() {
-	
-	$('.login_button, .bottle_purchase').click( function() {
-		if( $('.alerts_box').css("display") == "none" ){
-			$('.alerts_box').delay( 300 ).slideDown();
-			$('.alerts_box').delay(3000).slideUp();
+	//alerts
+	$('.login_button, .bottle_purchase').click( function() {	
+		if( $('.alerts_box').css("display") === "none" ){
+			
+			$('.alerts_box').slideDown();
+			$('.alerts_box').delay(3000).slideUp( function(){
+				$('.alerts_box').css("display", "none");
+				$('.alert_error, alert_pass').remove();
+			});
 		}
-	});	
+		return false;
+	});
+	
+	
+	//login, register... cover animation
+	$('.login_cover .wrapper').animate({opacity:'1', top:'70px'}, 1200);	
 });
 </script>
 

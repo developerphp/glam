@@ -164,7 +164,7 @@ class Register extends CI_Controller {
                     //$this->form_validation->set_rules('registerusername', '', 'trim|required|min_length[6]|max_length[50]|xss_clean|callback_valid_username');  
                     $this->form_validation->set_rules('password', "Şifre", 'required|trim|min_length[6]|max_length[50]|xss_clean|matches[password_repeat]|md5');
                     $this->form_validation->set_rules('rpassword', "Şifre Tekrar", 'trim');
-                    $this->form_validation->set_rules('phone','Telefon','required|min_length[7]|max_length[7]|xss_clean|numeric');
+                    $this->form_validation->set_rules('phone','Telefon','required|min_length[7]|max_length[15]|xss_clean|numeric');
                     $this->form_validation->set_message('required', '- %s '.' alanlarının doldurulması zorunludur');  
                     $this->form_validation->set_error_delimiters('<div class="alert_error">', '</div>');
 
@@ -175,7 +175,7 @@ class Register extends CI_Controller {
                             $sql=$this->db->query("select * from users where email='".$email."' limit 0,1");
                                 if ($sql->num_rows()<>0) 
                                 {
-                                    echo 'Bu email adresi kullanılıyor.';
+                                    echo '<div class="alert_error">Bu email adresi kullanılıyor.</div>';
                                 }
                                 else { 
                                     $onaykodu = uniqid();
@@ -223,7 +223,7 @@ class Register extends CI_Controller {
                     } 
             }
             else {
-                echo "Zaten üye girişi yapmışsınız.";
+                echo '<div class="alert_error">Zaten üye girişi yapmışsınız.</div>';
             }
 	}
 

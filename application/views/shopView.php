@@ -7,7 +7,7 @@
 <?php $this->load->view('includes/header') ?>
   
   <div class="alerts_box">
-  	<div class="alert_error purchase_b">En fazla 6 adet ekleyebilirsiniz.</div>
+	<div class="purchase_b">En fazla 6 adet ekleyebilirsiniz.</div>
   </div>
 
   <div class="bottles_fixed">
